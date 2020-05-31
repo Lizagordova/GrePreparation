@@ -12,14 +12,14 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="ClientApp" t="Include">
           <e p=".gitignore" t="Include" />
-          <e p="ClientApp\node_modules\@babel\parser" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@babel\types" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@jest\console" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@jest\fake-timers" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@jest\source-map" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@jest\test-result" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@jest\types" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@types" t="IncludeRecursive">
+          <e p="node_modules\@babel\parser" t="IncludeRecursive" />
+          <e p="node_modules\@babel\types" t="IncludeRecursive" />
+          <e p="node_modules\@jest\console" t="IncludeRecursive" />
+          <e p="node_modules\@jest\fake-timers" t="IncludeRecursive" />
+          <e p="node_modules\@jest\source-map" t="IncludeRecursive" />
+          <e p="node_modules\@jest\test-result" t="IncludeRecursive" />
+          <e p="node_modules\@jest\types" t="IncludeRecursive" />
+          <e p="node_modules\@types" t="IncludeRecursive">
             <e p="babel__generator" t="IncludeRecursive" />
             <e p="babel__template" t="IncludeRecursive" />
             <e p="babel__traverse" t="IncludeRecursive" />
@@ -30,65 +30,84 @@
             <e p="node" t="IncludeRecursive" />
             <e p="yargs-parser" t="IncludeRecursive" />
           </e>
-          <e p="ClientApp\node_modules\@typescript-eslint\experimental-utils" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@typescript-eslint\parser" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@typescript-eslint\typescript-estree" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@vkontakte\icons" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@vkontakte\vk-bridge" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@vkontakte\vk-miniapps-deploy" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\@vkontakte\vkui" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\babel-eslint" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\babel-jest" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\chalk" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\core-js" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\cross-env" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\dotenv" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\dotenv-expand" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\eruda" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\eruda-code" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\eruda-dom" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\html-webpack-plugin" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest-haste-map" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest-message-util" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest-mock" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest-resolve" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest-serializer" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest-util" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\jest-worker" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\postcss" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\pretty-error" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\prop-types" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\react" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\react-dom" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\react-hot-loader" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\react-scripts" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\realpath-native" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\source-map" t="IncludeRecursive" />
-          <e p="ClientApp\node_modules\worker-farm" t="IncludeRecursive" />
+          <e p="node_modules\@typescript-eslint\experimental-utils" t="IncludeRecursive" />
+          <e p="node_modules\@typescript-eslint\parser" t="IncludeRecursive" />
+          <e p="node_modules\@typescript-eslint\typescript-estree" t="IncludeRecursive" />
+          <e p="node_modules\@vkontakte\icons" t="IncludeRecursive" />
+          <e p="node_modules\@vkontakte\vk-bridge" t="IncludeRecursive" />
+          <e p="node_modules\@vkontakte\vk-miniapps-deploy" t="IncludeRecursive" />
+          <e p="node_modules\@vkontakte\vkui" t="IncludeRecursive" />
+          <e p="node_modules\babel-eslint" t="IncludeRecursive" />
+          <e p="node_modules\babel-jest" t="IncludeRecursive" />
+          <e p="node_modules\bootstrap" t="IncludeRecursive" />
+          <e p="node_modules\bootstrap-social" t="IncludeRecursive" />
+          <e p="node_modules\chalk" t="IncludeRecursive" />
+          <e p="node_modules\cheeseburger-menu" t="IncludeRecursive" />
+          <e p="node_modules\core-js" t="IncludeRecursive" />
+          <e p="node_modules\cross-env" t="IncludeRecursive" />
+          <e p="node_modules\dotenv" t="IncludeRecursive" />
+          <e p="node_modules\dotenv-expand" t="IncludeRecursive" />
+          <e p="node_modules\eruda" t="IncludeRecursive" />
+          <e p="node_modules\eruda-code" t="IncludeRecursive" />
+          <e p="node_modules\eruda-dom" t="IncludeRecursive" />
+          <e p="node_modules\font-awesome" t="IncludeRecursive" />
+          <e p="node_modules\html-webpack-plugin" t="IncludeRecursive" />
+          <e p="node_modules\jest" t="IncludeRecursive" />
+          <e p="node_modules\jest-haste-map" t="IncludeRecursive" />
+          <e p="node_modules\jest-message-util" t="IncludeRecursive" />
+          <e p="node_modules\jest-mock" t="IncludeRecursive" />
+          <e p="node_modules\jest-resolve" t="IncludeRecursive" />
+          <e p="node_modules\jest-serializer" t="IncludeRecursive" />
+          <e p="node_modules\jest-util" t="IncludeRecursive" />
+          <e p="node_modules\jest-worker" t="IncludeRecursive" />
+          <e p="node_modules\postcss" t="IncludeRecursive" />
+          <e p="node_modules\pretty-error" t="IncludeRecursive" />
+          <e p="node_modules\prop-types" t="IncludeRecursive" />
+          <e p="node_modules\react" t="IncludeRecursive" />
+          <e p="node_modules\react-dom" t="IncludeRecursive" />
+          <e p="node_modules\react-hamburger-menu" t="IncludeRecursive" />
+          <e p="node_modules\react-hot-loader" t="IncludeRecursive" />
+          <e p="node_modules\react-router-dom" t="IncludeRecursive" />
+          <e p="node_modules\react-scripts" t="IncludeRecursive" />
+          <e p="node_modules\reactstrap" t="IncludeRecursive" />
+          <e p="node_modules\realpath-native" t="IncludeRecursive" />
+          <e p="node_modules\source-map" t="IncludeRecursive" />
+          <e p="node_modules\worker-farm" t="IncludeRecursive" />
           <e p="package-lock.json" t="Include" />
           <e p="package.json" t="Include" />
           <e p="public" t="Include">
-            <e p="favicon.ico" t="Include" />
             <e p="index.html" t="Include" />
-            <e p="manifest.json" t="Include" />
           </e>
           <e p="README.md" t="Include" />
           <e p="src" t="Include">
             <e p="App.js" t="Include" />
-            <e p="App.test.js" t="Include" />
-            <e p="components" t="Include">
-              <e p="Counter.js" t="Include" />
-              <e p="FetchData.js" t="Include" />
+            <e p="Components" t="Include">
               <e p="Home.js" t="Include" />
-              <e p="Layout.js" t="Include" />
-              <e p="NavMenu.css" t="Include" />
-              <e p="NavMenu.js" t="Include" />
+              <e p="LearnWords.js" t="Include" />
+              <e p="Main.js" t="Include" />
+              <e p="Materials.js" t="Include" />
+              <e p="Menu.js" t="Include" />
+              <e p="Progress.js" t="Include" />
+              <e p="Rating.js" t="Include" />
+              <e p="TopicTasks.js" t="Include" />
+              <e p="Variants.js" t="Include" />
             </e>
-            <e p="custom.css" t="Include" />
+            <e p="eruda.js" t="Include" />
+            <e p="img" t="Include">
+              <e p="persik.png" t="Include" />
+            </e>
             <e p="index.js" t="Include" />
-            <e p="registerServiceWorker.js" t="Include" />
+            <e p="panels" t="Include">
+              <e p="Home.js" t="Include" />
+              <e p="Persik.css" t="Include" />
+              <e p="Persik.js" t="Include" />
+            </e>
+            <e p="styles" t="Include">
+              <e p="app.css" t="Include" />
+              <e p="menu.css" t="Include" />
+            </e>
           </e>
+          <e p="vk-hosting-config.json" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="WeatherForecastController.cs" t="Include" />
