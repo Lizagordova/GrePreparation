@@ -82,6 +82,7 @@
           <e p="src" t="Include">
             <e p="App.js" t="Include" />
             <e p="Components" t="Include">
+              <e p="Breadcrumbs.js" t="Include" />
               <e p="Home.js" t="Include" />
               <e p="LearnWords.js" t="Include" />
               <e p="Main.js" t="Include" />
@@ -91,6 +92,9 @@
               <e p="Rating.js" t="Include" />
               <e p="TopicTasks.js" t="Include" />
               <e p="Variants.js" t="Include" />
+            </e>
+            <e p="data" t="Include">
+              <e p="topics.js" t="Include" />
             </e>
             <e p="eruda.js" t="Include" />
             <e p="img" t="Include">
