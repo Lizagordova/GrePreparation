@@ -2,11 +2,23 @@
 import Breadcrumbs from "./Breadcrumbs";
 
 class TopicTasks extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            update:true
+        }
+    }
+
+    shouldComponentUpdate() {
+        return this.state.update === true
+    }
+
     render() {
         return(
             <div>
-                <Breadcrumbs topics={[0,1]} />
-                Topic Tasks
+                {this.setState({update: false})}
+                {console.log('topic tasks',this.props.breadcrumbs)}
+                <Breadcrumbs breadcrumbs={this.props.breadcrumbs} />
             </div>
         );
     }

@@ -2,6 +2,7 @@
 import  TOPICS  from '../data/topics';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import TopicTasks from "./TopicTasks";
 
 class Breadcrumbs extends Component {
     constructor(props) {
@@ -11,11 +12,15 @@ class Breadcrumbs extends Component {
         };
     }
     
+    componentDidMount() {
+        this.setState({breadcrumbs : []})
+    }
+
     loadBreadcrumbs(props) {
-        for(let i = 0;i<props.topics.length;i++)
+        for(let i = 0;i< props.breadcrumbs.length;i++)
         {
             let topic = TOPICS.find(topic => 
-            topic.id === props.topics[i]);
+            topic.id === props.breadcrumbs[i]);
             this.state.breadcrumbs.push(topic);
         }
     }
@@ -23,11 +28,14 @@ class Breadcrumbs extends Component {
     renderBreadcrumbs() {
         return (
             <>
-                <Breadcrumb>
+                <Breadcrumb className="breadcrumb">
+                    {console.log(this.state.breadcrumbs)}
                     {this.state.breadcrumbs.map(breadcrumb => {
                         return(
                         <BreadcrumbItem>
-                            <Link to='/home'>{breadcrumb.title}</Link>
+                            <Link className="breacrumbLink" 
+                                  to={breadcrumb.route}
+                                  onClick={() => {console.log('this was click')}}>{breadcrumb.title}</Link>
                         </BreadcrumbItem>
                         );
                   })
