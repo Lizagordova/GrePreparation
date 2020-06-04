@@ -1,5 +1,4 @@
 ﻿import React, { Component } from 'react';
-import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import  TOPICS  from '../data/topics';
 import '../styles/topicTasks.css';
@@ -16,13 +15,16 @@ class Topics extends Component {
         this.setState({ topics : []})
     }
 
-    loadTopics(props) {
-        for(let i = 0; i < props.topics.length; i++)
+    loadTopics(topicId) {
+        let topic = TOPICS.find(topic => 
+        topic.id === topicId);
+        let subtopics = topic.subtopics;
+        for(let i = 0; i < subtopics.length; i++)
         {
-            let topic = TOPICS.find(topic => 
-                topic.id === props.topics[i]
+            let subtopic = TOPICS.find(topic =>
+                topic.id === subtopics[i]
             );
-            this.state.topics.push(topic);
+            this.state.topics.push(subtopic);
         }
     }
 
@@ -32,7 +34,7 @@ class Topics extends Component {
              {this.state.topics.map(topic => {
                     return (
                      <div className="row justify-content-center">
-                         <div className="topicDiv">
+                         <div className="topicDiv" key={topic.id}>
                          <Link to={topic.route} className="topicLink">
                              <button>
                                  {topic.title}
@@ -49,7 +51,7 @@ class Topics extends Component {
     render() {
         return(
             <>
-                {this.loadTopics(this.props)}
+                {this.loadTopics(this.props.topic)}
                 {this.renderTopics()}
             </>
         );

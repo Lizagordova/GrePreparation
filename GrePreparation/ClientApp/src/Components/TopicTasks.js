@@ -19,7 +19,7 @@ class TopicTasks extends Component {
             <div>
                 {this.setState({update: false})}
                 <Breadcrumbs breadcrumbs={this.props.breadcrumbs} />
-                <Topics topics={[7,8]} />
+                <Topics topic={this.props.topic} />
             </div>
         );
     }
