@@ -90,6 +90,7 @@
               <e p="Menu.js" t="Include" />
               <e p="Progress.js" t="Include" />
               <e p="Rating.js" t="Include" />
+              <e p="topics.js" t="Include" />
               <e p="TopicTasks.js" t="Include" />
               <e p="Variants.js" t="Include" />
             </e>
@@ -109,6 +110,7 @@
             <e p="styles" t="Include">
               <e p="app.css" t="Include" />
               <e p="menu.css" t="Include" />
+              <e p="topicTasks.css" t="Include" />
             </e>
           </e>
           <e p="vk-hosting-config.json" t="Include" />

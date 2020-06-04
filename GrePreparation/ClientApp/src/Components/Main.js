@@ -30,7 +30,7 @@ class Main extends Component {
     
     render() {
         return(
-            <div>
+            <div className="cheeseburger">
                 <CheeseburgerMenu
                     isOpen={this.state.menuOpen}
                     closeCallback={this.closeMenu.bind(this)}>

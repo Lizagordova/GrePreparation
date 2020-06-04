@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d82596e-ef9d-4b6a-abf0-36cd8424fea9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Topics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/topicTasks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Breadcrumbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Breadcrumbs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,14 +39,16 @@
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/styles/menu.css" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/index.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/App.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/public/index.html" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Menu.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/menu.css" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Breadcrumbs.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Topics.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/public/index.html" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/topicTasks.css" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/menu.css" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" />
       </list>
     </option>
   </component>
@@ -116,7 +124,9 @@
       <workItem from="1590900134648" duration="43000" />
       <workItem from="1590910163379" duration="7047000" />
       <workItem from="1591005174784" duration="3303000" />
-      <workItem from="1591083874311" duration="3601000" />
+      <workItem from="1591083874311" duration="4394000" />
+      <workItem from="1591172805335" duration="104000" />
+      <workItem from="1591254969102" duration="4610000" />
     </task>
     <servers />
   </component>
@@ -139,22 +149,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="754" height="217" key="GridCell.Tab.0.bottom" timestamp="1591087512133">
+    <state width="754" height="214" key="GridCell.Tab.0.bottom" timestamp="1591255185193">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591087512133" />
-    <state width="754" height="217" key="GridCell.Tab.0.center" timestamp="1591087512133">
+    <state width="754" height="214" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591255185193" />
+    <state width="754" height="214" key="GridCell.Tab.0.center" timestamp="1591255185193">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591087512133" />
-    <state width="754" height="217" key="GridCell.Tab.0.left" timestamp="1591087512133">
+    <state width="754" height="214" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591255185193" />
+    <state width="754" height="214" key="GridCell.Tab.0.left" timestamp="1591255185192">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591087512133" />
-    <state width="754" height="217" key="GridCell.Tab.0.right" timestamp="1591087512133">
+    <state width="754" height="214" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591255185192" />
+    <state width="754" height="214" key="GridCell.Tab.0.right" timestamp="1591255185193">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591087512133" />
+    <state width="754" height="214" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591255185193" />
     <state x="63" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1590912241374">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

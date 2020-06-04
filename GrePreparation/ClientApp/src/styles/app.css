@@ -2,12 +2,16 @@
     height:100%;
 }
 .App {
-    background-color: #C200C2;
+    background-color: #AC2832;
     height:100%;
 }
 .breadcrumb {
-    background-color: #C200C2;
+    background-color: #AC2832;
 }
 .breacrumbLink {
-    color: white;
+    color: #DFD297;
+}
+
+.cheeseburger-menu-shadow {
+    background-color: #AC2832;
 }

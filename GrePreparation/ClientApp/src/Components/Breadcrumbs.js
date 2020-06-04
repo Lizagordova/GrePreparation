@@ -17,7 +17,7 @@ class Breadcrumbs extends Component {
     }
 
     loadBreadcrumbs(props) {
-        for(let i = 0;i< props.breadcrumbs.length;i++)
+        for(let i = 0; i < props.breadcrumbs.length; i++)
         {
             let topic = TOPICS.find(topic => 
             topic.id === props.breadcrumbs[i]);

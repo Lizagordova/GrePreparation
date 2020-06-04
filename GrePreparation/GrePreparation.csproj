@@ -24,11 +24,13 @@
 		<Content Include="ClientApp\src\Components\Menu.js" />
 		<Content Include="ClientApp\src\Components\Progress.js" />
 		<Content Include="ClientApp\src\Components\Rating.js" />
+		<Content Include="ClientApp\src\Components\Topics.js" />
 		<Content Include="ClientApp\src\Components\TopicTasks.js" />
 		<Content Include="ClientApp\src\Components\Variants.js" />
 		<Content Include="ClientApp\src\data\topics.js" />
 		<Content Include="ClientApp\src\styles\app.css" />
 		<Content Include="ClientApp\src\styles\menu.css" />
+		<Content Include="ClientApp\src\styles\topicTasks.css" />
 		<None Remove="$(SpaRoot)**" />
 		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
 	</ItemGroup>

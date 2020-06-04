@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import Breadcrumbs from "./Breadcrumbs";
+import Topics from './Topics';
 
 class TopicTasks extends Component {
     constructor(props) {
@@ -17,8 +18,8 @@ class TopicTasks extends Component {
         return(
             <div>
                 {this.setState({update: false})}
-                {console.log('topic tasks',this.props.breadcrumbs)}
                 <Breadcrumbs breadcrumbs={this.props.breadcrumbs} />
+                <Topics topics={[7,8]} />
             </div>
         );
     }
