@@ -13,16 +13,32 @@ class TopicTasks extends Component {
     shouldComponentUpdate() {
         return this.state.update === true
     }
-
+ 
+    renderTopics(props) {
+        if (props.match !== undefined) {
+            return <Topics topic={props.match.params.id} />
+        } else {
+            return <Topics topic={props.topic} />}
+    }
+    
+    renderBreadcrumbs(props) {
+        if (props.match !== undefined) {
+            return <Breadcrumbs breadcrumbs={[0,1,7]} />
+        } else {
+            return <Breadcrumbs breadcrumbs={this.props.breadcrumbs} />
+        }
+    }
     render() {
+        
         return(
             <div>
                 {this.setState({update: false})}
-                <Breadcrumbs breadcrumbs={this.props.breadcrumbs} />
-                <Topics topic={this.props.topic} />
+                {this.renderBreadcrumbs(this.props)}
+                {this.renderTopics(this.props)}
             </div>
         );
     }
 }
 
 export default TopicTasks;
+

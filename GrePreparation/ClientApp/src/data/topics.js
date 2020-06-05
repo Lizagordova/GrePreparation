@@ -1,6 +1,6 @@
 ﻿const TOPICS = [
     {id:0, title:'Main', subtopics:[], route:'/home'},
-    {id:1, title:'Topic Tasks', subtopics:[7,8], route: '/topictasks'},
+    {id:1, title:'Topic Tasks', subtopics:[7,8], route: '/topictasks/:id'},
     {id:2, title:'Materials', subtopics:[], route: '/materials'},
     {id:3, title:'Variants', subtopics:[], route: '/variants'},
     {id:4, title:'Rating', subtopics:[], route: '/rating'},

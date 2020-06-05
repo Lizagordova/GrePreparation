@@ -29,7 +29,6 @@ class Breadcrumbs extends Component {
         return (
             <>
                 <Breadcrumb className="breadcrumb">
-                    {console.log(this.state.breadcrumbs)}
                     {this.state.breadcrumbs.map(breadcrumb => {
                         return(
                         <BreadcrumbItem>
