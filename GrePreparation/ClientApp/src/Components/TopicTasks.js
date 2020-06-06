@@ -6,12 +6,15 @@ class TopicTasks extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            update:true
+            update:true,
+            id: 0
         }
     }
 
     shouldComponentUpdate() {
-        return this.state.update === true
+        {console.log('proooooops', this.props)}
+        {console.log('update', this.state.update)}
+        return this.state.update !== true
     }
  
     renderTopics(props) {
@@ -20,19 +23,36 @@ class TopicTasks extends Component {
         } else {
             return <Topics topic={props.topic} />}
     }
-    
+
     renderBreadcrumbs(props) {
         if (props.match !== undefined) {
-            return <Breadcrumbs breadcrumbs={[0,1,7]} />
+            return <Breadcrumbs topic={props.match.params.id} />
         } else {
-            return <Breadcrumbs breadcrumbs={this.props.breadcrumbs} />
+            return <Breadcrumbs topic={props.topic} />
         }
     }
+    
+    setStateManually(props) {
+        if(props.match !== undefined) {
+            if(props.match.params.id !== this.state.id) {
+                {console.log('they are not equal')}
+                return this.setState({id: props.match.params.id, update: true})
+            }
+            else {
+                    console.log('they are equal');
+                    return this.setState({update: false})  
+            }
+        } else {
+            {console.log('why am i here?')}
+            return this.setState({id: props.topic, update: false})
+        }
+    }
+
     render() {
-        
         return(
             <div>
-                {this.setState({update: false})}
+                {console.log('i was here!')}
+                {this.setStateManually(this.props)}
                 {this.renderBreadcrumbs(this.props)}
                 {this.renderTopics(this.props)}
             </div>

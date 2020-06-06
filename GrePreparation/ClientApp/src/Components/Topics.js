@@ -50,7 +50,7 @@ class Topics extends Component {
 
     render() {
         return(
-            <>                
+            <> 
                 {this.loadTopics(this.props.topic)}
                 {this.renderTopics()}
             </>

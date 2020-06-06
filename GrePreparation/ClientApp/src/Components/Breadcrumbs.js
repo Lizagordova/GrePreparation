@@ -2,7 +2,6 @@
 import  TOPICS  from '../data/topics';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import TopicTasks from "./TopicTasks";
 
 class Breadcrumbs extends Component {
     constructor(props) {
@@ -16,12 +15,15 @@ class Breadcrumbs extends Component {
         this.setState({breadcrumbs : []})
     }
 
-    loadBreadcrumbs(props) {
-        for(let i = 0; i < props.breadcrumbs.length; i++)
+    loadBreadcrumbs(topicId) {
+        {console.log('topic id', topicId)}
+        let topic = TOPICS.find(topic => topic.id == topicId);
+        let breadcrumbs = topic.breadcrumbs;
+        for(let i = 0; i < breadcrumbs.length; i++)
         {
-            let topic = TOPICS.find(topic => 
-            topic.id === props.breadcrumbs[i]);
-            this.state.breadcrumbs.push(topic);
+            let breadcrumb = TOPICS.find(item => 
+            item.id === breadcrumbs[i]);
+            this.state.breadcrumbs.push(breadcrumb);
         }
     }
 
@@ -31,10 +33,8 @@ class Breadcrumbs extends Component {
                 <Breadcrumb className="breadcrumb">
                     {this.state.breadcrumbs.map(breadcrumb => {
                         return(
-                        <BreadcrumbItem>
-                            <Link className="breacrumbLink" 
-                                  to={breadcrumb.route}
-                                  onClick={() => {console.log('this was click')}}>{breadcrumb.title}</Link>
+                        <BreadcrumbItem key={breadcrumb.id}>
+                            <Link to={`/topictasks/${breadcrumb.id}`} className="breadcrumbLink">{breadcrumb.title}</Link>
                         </BreadcrumbItem>
                         );
                   })
@@ -47,7 +47,7 @@ class Breadcrumbs extends Component {
                 render() {
                 return (
                 <div>
-                {this.loadBreadcrumbs(this.props)}
+                {this.loadBreadcrumbs(this.props.topic)}
                 {this.renderBreadcrumbs()}
                 </div>
                 );
