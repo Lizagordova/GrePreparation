@@ -10,14 +10,13 @@ class Topics extends Component {
             topics: []
         }
     }
-
-    componentDidMount() {
+    
+    componentWillReceiveProps(nextProps) {
         this.setState({ topics : []})
     }
 
     loadTopics(topicId) {
-        let topic = TOPICS.find(topic => 
-        topic.id == topicId);
+        let topic = TOPICS.find(topic => topic.id == topicId);
         let subtopics = topic.subtopics;
         for(let i = 0; i < subtopics.length; i++)
         {
@@ -42,10 +41,10 @@ class Topics extends Component {
                          </Link>
                          </div>
                       </div>
-                )
+                );
                })}
             </div>
-        )
+        );
     }
 
     render() {

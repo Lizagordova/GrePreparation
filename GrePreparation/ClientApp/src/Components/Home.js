@@ -5,6 +5,13 @@ class Home extends Component {
         return(
             <div>
                 Home
+                Home
+                Home
+                Home
+                Home
+                Home
+                Home
+                Home
             </div>
         );
     }

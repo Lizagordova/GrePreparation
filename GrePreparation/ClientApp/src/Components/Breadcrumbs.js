@@ -11,12 +11,11 @@ class Breadcrumbs extends Component {
         };
     }
     
-    componentDidMount() {
-        this.setState({breadcrumbs : []})
+    componentWillReceiveProps(nextProps) {
+        this.setState({ breadcrumbs : []})
     }
 
     loadBreadcrumbs(topicId) {
-        {console.log('topic id', topicId)}
         let topic = TOPICS.find(topic => topic.id == topicId);
         let breadcrumbs = topic.breadcrumbs;
         for(let i = 0; i < breadcrumbs.length; i++)
@@ -34,7 +33,8 @@ class Breadcrumbs extends Component {
                     {this.state.breadcrumbs.map(breadcrumb => {
                         return(
                         <BreadcrumbItem key={breadcrumb.id}>
-                            <Link to={`/topictasks/${breadcrumb.id}`} className="breadcrumbLink">{breadcrumb.title}</Link>
+                            {breadcrumb.id !== 0 && <Link to={`/topictasks/${breadcrumb.id}`} className="breadcrumbLink">{breadcrumb.title}</Link>}
+                            {breadcrumb.id === 0 && <Link to="/home" className="breadcrumbLink">{breadcrumb.title}</Link>}
                         </BreadcrumbItem>
                         );
                   })

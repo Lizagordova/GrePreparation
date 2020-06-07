@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d82596e-ef9d-4b6a-abf0-36cd8424fea9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Breadcrumbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Breadcrumbs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/LearnWords.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/LearnWords.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Materials.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Materials.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Topics.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Topics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +27,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Home.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/LearnWords.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Variants.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Rating.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Progress.js" />
@@ -44,9 +43,12 @@
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Topics.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Home.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Breadcrumbs.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/functions/breadcrumbsFunctions.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/LearnWords.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" />
       </list>
     </option>
   </component>
@@ -134,6 +136,8 @@
       <workItem from="1591264056737" duration="28000" />
       <workItem from="1591356324184" duration="5534000" />
       <workItem from="1591437984108" duration="5650000" />
+      <workItem from="1591443744302" duration="833000" />
+      <workItem from="1591520924907" duration="3173000" />
     </task>
     <servers />
   </component>
@@ -156,26 +160,26 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="754" height="213" key="GridCell.Tab.0.bottom" timestamp="1591443642098">
+    <state width="849" height="207" key="GridCell.Tab.0.bottom" timestamp="1591525245580">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="213" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591443642098" />
-    <state width="754" height="213" key="GridCell.Tab.0.center" timestamp="1591443642097">
+    <state width="849" height="207" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591525245580" />
+    <state width="849" height="207" key="GridCell.Tab.0.center" timestamp="1591525245580">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="213" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591443642097" />
-    <state width="754" height="213" key="GridCell.Tab.0.left" timestamp="1591443642097">
+    <state width="849" height="207" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591525245580" />
+    <state width="849" height="207" key="GridCell.Tab.0.left" timestamp="1591525245579">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="213" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591443642097" />
-    <state width="754" height="213" key="GridCell.Tab.0.right" timestamp="1591443642098">
+    <state width="849" height="207" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591525245579" />
+    <state width="849" height="207" key="GridCell.Tab.0.right" timestamp="1591525245580">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="213" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591443642098" />
-    <state x="78" y="165" width="644" height="536" key="find.popup" timestamp="1591440133533">
+    <state width="849" height="207" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591525245580" />
+    <state x="78" y="165" width="644" height="536" key="find.popup" timestamp="1591525574190">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="78" y="165" width="644" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1591440133533" />
+    <state x="78" y="165" width="644" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1591525574190" />
     <state x="63" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1590912241374">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

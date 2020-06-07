@@ -98,6 +98,9 @@
               <e p="topics.js" t="Include" />
             </e>
             <e p="eruda.js" t="Include" />
+            <e p="functions" t="Include">
+              <e p="breadcrumbsFunctions.js" t="Include" />
+            </e>
             <e p="img" t="Include">
               <e p="persik.png" t="Include" />
             </e>

@@ -56,7 +56,7 @@ class Main extends Component {
                     <Route path="/variants" component={Variants}/>
                     <Route path="/rating" component={Rating}/>
                     <Route path="/progress" component={Progress}/>
-                    <Route path="/learnwords" component={LearnWords}/>
+                    <Route path="/learnwords" component={() => <LearnWords topic={6}/>}/>
                     <Redirect to="/home" />
                 </Switch>
             </div>

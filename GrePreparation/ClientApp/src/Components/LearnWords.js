@@ -1,10 +1,12 @@
 ﻿import React, { Component } from 'react';
+import renderBreadcrumbs from '../functions/breadcrumbsFunctions'
 
 class LearnWords extends Component {
+    
     render() {
         return(
             <div>
-                LearnWords
+                {renderBreadcrumbs(this.props)}
             </div>
         );
     }
