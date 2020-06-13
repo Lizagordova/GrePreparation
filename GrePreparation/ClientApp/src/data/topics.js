@@ -10,7 +10,7 @@
     {id:8, title:'Verbal Reasoning', subtopics:[], route: './topictasks', breadcrumbs: [0, 1, 8]},
     {id:9, title:'Algebra', subtopics:[11, 12, 13, 14, 15], breadcrumbs: [0, 1, 7 ,9]},
     {id:10, title:'Number properties', subtopics:[], breadcrumbs: [0, 1, 7, 10]},
-    {id:11, title:'Statistics', subtopics:[], breadcrumbs: [0, 1, 7, 11]},
+    {id:11, title:'Statistics', subtopics:[23], breadcrumbs: [0, 1, 7, 11]},
     {id:12, title:'Data Interpritation', subtopics:[], breadcrumbs: [0, 1, 7, 12]},
     {id:13, title:'Advanced Quant', subtopics:[], breadcrumbs: [0, 1, 7, 13]},
     {id:14, title:'Word Problems', subtopics:[], breadcrumbs: [0, 1, 7, 14]},
@@ -21,7 +21,8 @@
     {id:19, title:'Inequalities and Absolute Values', subtopics:[], breadcrumbs: [0, 1, 7, 9, 19]},
     {id:20, title:'Fuctions, Formulas and Sequences', subtopics:[], breadcrumbs: [0, 1, 7, 9, 20]},
     {id:21, title:'Variables in-the-choices problems', subtopics:[], breadcrumbs: [0, 1, 7, 9, 21]},
-    {id:22, title:'Rates and Work', subtopics:[], breadcrumbs: [0, 1, 7, 9, 22]}
+    {id:22, title:'Rates and Work', subtopics:[], breadcrumbs: [0, 1, 7, 9, 22]},
+    {id:23, title:"Standard Deviation And Normal Distribution", subtopics:[], breadcrumbs:[0, 1, 7, 11, 23]}
 ];
 
 export default TOPICS;

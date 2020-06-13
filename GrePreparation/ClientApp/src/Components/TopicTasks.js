@@ -1,5 +1,6 @@
 ﻿import React, { Component, PureComponent} from 'react';
 import Topics from './Topics';
+import Task from './Task';
 import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
 
 class TopicTasks extends Component {
@@ -22,6 +23,13 @@ class TopicTasks extends Component {
  
     renderTopics(props) {
         if (props.match !== undefined) {
+            {console.log(props.match.params.id)}
+            if(props.match.params.id == 23)//здесь, думаю, должна быть проверка на то, чтобы субтопиков не было
+            {
+                {console.log('Yes, match is equal 23')}
+                {console.log(props.match.params.id)}
+                return <Task topic={props.match.params.id}/>
+            }
             return <Topics topic={props.match.params.id} />
         } else {
             return <Topics topic={props.topic} />}
