@@ -2,12 +2,14 @@
 import Topics from './Topics';
 import Task from './Task';
 import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
+import {Redirect } from "react-router-dom";
 
 class TopicTasks extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            update:true
+            update:true,
+            otherComponent: false
         }
     }
 
@@ -18,7 +20,7 @@ class TopicTasks extends Component {
     }
 
     shouldComponentUpdate() {
-        return this.state.update === true
+            return this.state.update === true
     }
  
     renderTopics(props) {
@@ -28,7 +30,7 @@ class TopicTasks extends Component {
             {
                 {console.log('Yes, match is equal 23')}
                 {console.log(props.match.params.id)}
-                return <Task topic={props.match.params.id}/>
+               return <Redirect to="/task"/> 
             }
             return <Topics topic={props.match.params.id} />
         } else {
@@ -38,8 +40,8 @@ class TopicTasks extends Component {
     render() {
         return(
             <div>
-                {renderBreadcrumbs(this.props)}
-                {this.renderTopics(this.props)}
+                  {renderBreadcrumbs(this.props)}
+                  {this.renderTopics(this.props)}
             </div>
         );
     }

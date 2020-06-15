@@ -13,16 +13,13 @@ namespace GrePreparation.Controllers
 		[HttpGet]
 		public IEnumerable<Task> Get()
 		{
-		/*	var streamReader = new StreamReader("./data/tasks/StandardDeviationAndNormalDistribution.json");
+			var streamReader = new StreamReader("./data/tasks/StandardDeviationAndNormalDistribution.json");
 			var json = streamReader.ReadToEnd();
 			var tasks = JsonConvert.DeserializeObject<List<Models.Task>>(json);
 
-			streamReader.Close();*/
-			var testtasks = new List<Task>();
-			var task = new Task(){Id=12, TaskText = "12", Answers = new List<Answer>(), RightAnswers = new List<int>(), Explanation = "12", Instruction = "12"};
-			testtasks.Add(task);
+			streamReader.Close();
 
-		return testtasks;
+		return tasks;
 		}
 	}
 }

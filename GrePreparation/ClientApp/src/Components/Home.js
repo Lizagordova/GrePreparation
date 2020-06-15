@@ -7,11 +7,6 @@ class Home extends Component {
                 Home
                 Home
                 Home
-                Home
-                Home
-                Home
-                Home
-                Home
             </div>
         );
     }

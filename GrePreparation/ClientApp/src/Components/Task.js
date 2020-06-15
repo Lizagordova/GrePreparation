@@ -4,12 +4,15 @@ import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
 class Task extends Component {
     constructor(props) {
         super(props);
-        this.state = {tasks: [], loading: true}
+        this.state = {
+            tasks: [],
+            loading: true
+        }
     }
     
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!
-        this.loadTasks();//здесь можно then для вызова renderTasks!
-        console.log('tasks',this.state.tasks)
+        this.loadTasks()
+            .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
     }
     
     static renderTasks(tasks) {
@@ -18,12 +21,13 @@ class Task extends Component {
                 {tasks.map(task =>
                     <div className="row" key={task.id}>
                         <div className="col-12">
+                            <span>{task.explanation}</span>
                             <span>{task.tasktext}</span>
                         </div>
                     </div>
                 )}
             </div>
-        )
+        );
     }
 
     render() {
@@ -41,11 +45,12 @@ class Task extends Component {
     }
     
      async loadTasks() {
-         {console.log('ш рфм')}
+         {console.log('fetch tasks start')}
         const response = await fetch('task');
-          const data = await response.json();
-         {console.log('data', data)}
-        this.setState({tasks: data, loading: true});
+        console.log('Response: ', response);
+        const data = await response.json();
+        console.log('Data: ', data);
+        this.setState({tasks: data, loading: false});
     }
 }
 
