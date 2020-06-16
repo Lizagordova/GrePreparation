@@ -6,11 +6,13 @@ class Task extends Component {
         super(props);
         this.state = {
             tasks: [],
-            loading: true
+            loading: true,
+            topic: 0
         }
     }
     
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!
+        {this.setState({topic: this.props.location.state.id})}
         this.loadTasks()
             .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
     }
@@ -37,8 +39,10 @@ class Task extends Component {
 
         return (
              <div>
-                 {console.log('I am in task already')}
-                 {console.log('breadcrumbs', this.props)}
+                 {console.log('location', this.props.location)}
+              
+                 {renderBreadcrumbs(this.state)}
+                 
                  {tasks}
              </div>
         );

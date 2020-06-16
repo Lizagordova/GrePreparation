@@ -6,11 +6,10 @@ using Newtonsoft.Json;
 
 namespace GrePreparation.Controllers
 {
-	[ApiController]
-	[Route("[controller]")]
 	public class TaskController : ControllerBase
 	{
 		[HttpGet]
+		[Route("topictasks/task")]
 		public IEnumerable<Task> Get()
 		{
 			var streamReader = new StreamReader("./data/tasks/StandardDeviationAndNormalDistribution.json");

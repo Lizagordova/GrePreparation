@@ -10,7 +10,7 @@ class Breadcrumbs extends Component {
             breadcrumbs: []
         };
     }
-    
+
     componentWillReceiveProps(nextProps) {
         this.setState({ breadcrumbs : []})
     }
@@ -47,6 +47,7 @@ class Breadcrumbs extends Component {
                 render() {
                 return (
                 <div>
+                    {console.log('props in breadcrumbs', this.props)}
                 {this.loadBreadcrumbs(this.props.topic)}
                 {this.renderBreadcrumbs()}
                 </div>
