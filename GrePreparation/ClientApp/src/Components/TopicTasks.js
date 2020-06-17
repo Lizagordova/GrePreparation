@@ -27,8 +27,6 @@ class TopicTasks extends Component {
             {console.log(props.match.params.id)}
             if(props.match.params.id == 23)//здесь, думаю, должна быть проверка на то, чтобы субтопиков не было
             {
-                {console.log('Yes, match is equal 23')}
-                {console.log(props.match.params.id)}
                return <Redirect to={{pathname: "/topictasks/task", state: {id: props.match.params.id}}}/> 
             }
             return <Topics topic={props.match.params.id} />

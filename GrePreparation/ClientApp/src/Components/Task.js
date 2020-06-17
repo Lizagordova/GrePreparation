@@ -16,6 +16,23 @@ class Task extends Component {
         this.loadTasks()
             .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
     }
+    static renderAnswers(answers) {
+        return (
+            <>
+                {console.log('answeeers',answers)}
+                <ul>
+                {answers.map(answer =>
+                    <div className="form-check" key={answer.id}>
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+                            <label className="form-check-label" htmlFor="defaultCheck1">
+                                {answer.answerText}
+                            </label>
+                    </div>)
+                }
+                </ul>
+            </>
+        )
+    }
     
     static renderTasks(tasks) {
         return (
@@ -23,8 +40,9 @@ class Task extends Component {
                 {tasks.map(task =>
                     <div className="row" key={task.id}>
                         <div className="col-12">
-                            <span>{task.explanation}</span>
-                            <span>{task.tasktext}</span>
+                            <span>{task.taskText}</span>
+                            {this.renderAnswers(task.answers)
+                           }
                         </div>
                     </div>
                 )}
