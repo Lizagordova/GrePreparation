@@ -16,10 +16,10 @@ class Task extends Component {
         this.loadTasks()
             .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
     }
+
     static renderAnswers(answers) {
         return (
             <>
-                {console.log('answeeers',answers)}
                 <ul>
                 {answers.map(answer =>
                     <div className="form-check" key={answer.id}>
@@ -57,21 +57,15 @@ class Task extends Component {
 
         return (
              <div>
-                 {console.log('location', this.props.location)}
-              
                  {renderBreadcrumbs(this.state)}
-                 
                  {tasks}
              </div>
         );
     }
     
      async loadTasks() {
-         {console.log('fetch tasks start')}
         const response = await fetch('task');
-        console.log('Response: ', response);
         const data = await response.json();
-        console.log('Data: ', data);
         this.setState({tasks: data, loading: false});
     }
 }
