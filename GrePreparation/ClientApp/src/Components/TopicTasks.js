@@ -3,6 +3,7 @@ import Topics from './Topics';
 import Task from './Task';
 import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
 import { Redirect } from "react-router-dom";
+import  TOPICS  from '../data/topics';
 
 class TopicTasks extends Component {
     constructor(props) {
@@ -24,8 +25,8 @@ class TopicTasks extends Component {
  
     renderTopics(props) {
         if (props.match !== undefined) {
-            {console.log(props.match.params.id)}
-            if(props.match.params.id == 23)//здесь, думаю, должна быть проверка на то, чтобы субтопиков не было
+            let topic = TOPICS.find(topic => topic.id == props.match.params.id);
+            if(topic.subtopics == 0)
             {
                return <Redirect to={{pathname: "/topictasks/task", state: {id: props.match.params.id}}}/> 
             }
