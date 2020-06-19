@@ -90,7 +90,24 @@
               <e p="Menu.js" t="Include" />
               <e p="Progress.js" t="Include" />
               <e p="Rating.js" t="Include" />
+              <e p="Route" t="Include">
+                <e p="helpers" t="Include">
+                  <e p="AppRoute.tsx" t="Include" />
+                </e>
+                <e p="routes.tsx" t="Include" />
+                <e p="utils" t="Include">
+                  <e p="renderRoutes.tsx" t="Include" />
+                </e>
+              </e>
               <e p="Task.js" t="Include" />
+              <e p="TaskType" t="Include">
+                <e p="QuantitativeReasoning" t="Include" />
+                <e p="VerbalReasoning" t="Include">
+                  <e p="ReadingComprehension" t="Include">
+                    <e p="MultipleChoiceQuestion.js" t="Include" />
+                  </e>
+                </e>
+              </e>
               <e p="topics.js" t="Include" />
               <e p="TopicTasks.js" t="Include" />
               <e p="Variants.js" t="Include" />
@@ -101,6 +118,9 @@
             <e p="eruda.js" t="Include" />
             <e p="functions" t="Include">
               <e p="breadcrumbsFunctions.js" t="Include" />
+            </e>
+            <e p="helpers" t="Include">
+              <e p="taskType.js" t="Include" />
             </e>
             <e p="img" t="Include">
               <e p="persik.png" t="Include" />

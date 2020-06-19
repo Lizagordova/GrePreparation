@@ -20,5 +20,18 @@ namespace GrePreparation.Controllers
 
 		return tasks;
 		}
+		
+		[HttpPost]
+		[Route("topictasks/task/gettasks")]
+		public string GetTasks([FromBody]string taskType)
+		{
+			/*var streamReader = new StreamReader("./data/tasks/StandardDeviationAndNormalDistribution.json");
+			var json = streamReader.ReadToEnd();
+			var tasks = JsonConvert.DeserializeObject<List<Models.Task>>(json);
+
+			streamReader.Close();*/
+
+			return taskType;
+		}
 	}
 }

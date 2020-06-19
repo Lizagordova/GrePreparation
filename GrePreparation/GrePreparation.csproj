@@ -30,6 +30,7 @@
 		<Content Include="ClientApp\src\Components\TopicTasks.js" />
 		<Content Include="ClientApp\src\Components\Variants.js" />
 		<Content Include="ClientApp\src\data\topics.js" />
+		<Content Include="ClientApp\src\helpers\TaskType.js" />
 		<Content Include="ClientApp\src\functions\breadcrumbsFunctions.js" />
 		<Content Include="ClientApp\src\styles\app.css" />
 		<Content Include="ClientApp\src\styles\menu.css" />

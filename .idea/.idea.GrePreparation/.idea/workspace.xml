@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d82596e-ef9d-4b6a-abf0-36cd8424fea9" name="Default Changelist" comment="">
+    <list default="true" id="8d82596e-ef9d-4b6a-abf0-36cd8424fea9" name="Default Changelist" comment="Начала списывать роутинг у Вадима">
+      <change afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/helpers/TaskType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Route/utils/renderRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Route/utils/renderRoutes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/topicTasks.css" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/topicTasks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +72,18 @@
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/package-lock.json" />
         <option value="$PROJECT_DIR$/GrePreparation/Models/Task.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Home.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Breadcrumbs.js" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Topics.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/topicTasks.css" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TaskType/VerbalReasoning/ReadingComprehension/MultipleChoiceQuestion.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Route/helpers/AppRoute.tsx" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Route/routes.tsx" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Main.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TopicTasks.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/enums/taskType.js.Designer.cs" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/enums/taskType.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/enums/TaskType.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Route/utils/renderRoutes.tsx" />
         <option value="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" />
       </list>
@@ -98,6 +108,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\JetBrains Rider 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.GrePreparation">
     <configuration name="GrePreparation" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -168,8 +179,18 @@
       <workItem from="1592040457546" duration="5273000" />
       <workItem from="1592198400414" duration="3854000" />
       <workItem from="1592287826515" duration="4242000" />
-      <workItem from="1592378116410" duration="4919000" />
+      <workItem from="1592378116410" duration="5674000" />
+      <workItem from="1592475668437" duration="4058000" />
+      <workItem from="1592561117517" duration="5703000" />
     </task>
+    <task id="LOCAL-00001" summary="Начала списывать роутинг у Вадима">
+      <created>1592564612916</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592564612916</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,23 +211,31 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Начала списывать роутинг у Вадима" />
+    <option name="LAST_COMMIT_MESSAGE" value="Начала списывать роутинг у Вадима" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="754" height="195" key="GridCell.Tab.0.bottom" timestamp="1592382172697">
+    <state x="127" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592478568449">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592382172697" />
-    <state width="754" height="195" key="GridCell.Tab.0.center" timestamp="1592382172696">
+    <state x="127" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1592478568449" />
+    <state width="1110" height="314" key="GridCell.Tab.0.bottom" timestamp="1592566915426">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592382172696" />
-    <state width="754" height="195" key="GridCell.Tab.0.left" timestamp="1592382172696">
+    <state width="1110" height="314" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592566915426" />
+    <state width="1110" height="314" key="GridCell.Tab.0.center" timestamp="1592566915426">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592382172696" />
-    <state width="754" height="195" key="GridCell.Tab.0.right" timestamp="1592382172697">
+    <state width="1110" height="314" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592566915426" />
+    <state width="1110" height="314" key="GridCell.Tab.0.left" timestamp="1592566915426">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592382172697" />
+    <state width="1110" height="314" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592566915426" />
+    <state width="1110" height="314" key="GridCell.Tab.0.right" timestamp="1592566915426">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1110" height="314" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592566915426" />
     <state width="849" height="83" key="GridCell.Tab.1.bottom" timestamp="1592045943257">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -271,13 +300,17 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="849" height="83" key="GridCell.Tab.4.right/0.0.1600.860@0.0.1600.860" timestamp="1592045943257" />
-    <state x="78" y="165" width="644" height="536" key="find.popup" timestamp="1592289500584">
+    <state x="78" y="165" width="689" height="536" key="find.popup" timestamp="1592565684227">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="78" y="165" width="644" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1592289500584" />
-    <state x="63" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1592382688629">
+    <state x="78" y="165" width="689" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1592565684227" />
+    <state x="131" y="199" key="run.anything.popup" timestamp="1592384215789">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="63" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1592382688629" />
+    <state x="131" y="199" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1592384215789" />
+    <state x="63" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1592479111993">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="63" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1592479111993" />
   </component>
 </project>
