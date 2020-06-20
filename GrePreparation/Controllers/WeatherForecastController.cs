@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using GrePreparation.Models;
 
 namespace GrePreparation.Controllers
 {
@@ -34,6 +34,20 @@ namespace GrePreparation.Controllers
 					Summary = Summaries[rng.Next(Summaries.Length)]
 				})
 				.ToArray();
+		}
+		
+		[HttpPost]
+		public IEnumerable<Task> GetTasks([FromBody]string taskType)
+		{
+			/*var streamReader = new StreamReader("./data/tasks/StandardDeviationAndNormalDistribution.json");
+			var json = streamReader.ReadToEnd();
+			var tasks = JsonConvert.DeserializeObject<List<Models.Task>>(json);
+
+			streamReader.Close();*/
+			var tasks = new List<Task>();
+			var task = new Task(){ TaskText = taskType};
+			tasks.Add(task);
+			return tasks;
 		}
 	}
 }

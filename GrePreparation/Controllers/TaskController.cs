@@ -20,18 +20,23 @@ namespace GrePreparation.Controllers
 
 		return tasks;
 		}
-		
+
 		[HttpPost]
 		[Route("topictasks/task/gettasks")]
-		public string GetTasks([FromBody]string taskType)
+		public IEnumerable<Task> GetTasks([FromBody]DataPost dataPost)
 		{
 			/*var streamReader = new StreamReader("./data/tasks/StandardDeviationAndNormalDistribution.json");
 			var json = streamReader.ReadToEnd();
 			var tasks = JsonConvert.DeserializeObject<List<Models.Task>>(json);
 
 			streamReader.Close();*/
-
-			return taskType;
+			var tasks = new List<Task>();
+			var task = new Task()
+			{
+				TaskText = dataPost.taskType
+			};
+			tasks.Add(task);
+			return tasks;
 		}
 	}
 }

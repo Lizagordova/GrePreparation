@@ -42,6 +42,7 @@ namespace GrePreparation
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
+			app.UseDefaultFiles();
 			app.UseSpaStaticFiles();
 
 			app.UseRouting();

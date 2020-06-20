@@ -66,11 +66,14 @@ class Task extends Component {
      async loadTasks() {
         const response = await fetch('task');
         const response1 = await fetch('task/gettasks', {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({taskType: "multiplechoice"})
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ taskType: 'multiplechoice'})
         });
-        console.log('response1');
+         console.log('response1');
          console.log(response1);
          console.log('data 1');
          console.log(response1.json());

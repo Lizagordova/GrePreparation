@@ -131,12 +131,14 @@
               <e p="Persik.css" t="Include" />
               <e p="Persik.js" t="Include" />
             </e>
+            <e p="react-app-env.d.ts" t="Include" />
             <e p="styles" t="Include">
               <e p="app.css" t="Include" />
               <e p="menu.css" t="Include" />
               <e p="topicTasks.css" t="Include" />
             </e>
           </e>
+          <e p="tsconfig.json" t="Include" />
           <e p="vk-hosting-config.json" t="Include" />
         </e>
         <e p="Controllers" t="Include">
@@ -151,6 +153,7 @@
         <e p="GrePreparation.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="Answer.cs" t="Include" />
+          <e p="DataPostl.cs" t="Include" />
           <e p="Task.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
