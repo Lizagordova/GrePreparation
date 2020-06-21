@@ -4,6 +4,8 @@ namespace GrePreparation.Models
 {
 	public class DataPost
 	{
-		[Required] public string taskType { get; set; }
+		public string TaskType { get; set; }
+		public string Level { get; set; }
+		public string Topic { get; set; }
 	}
 }

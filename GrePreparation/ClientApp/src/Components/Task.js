@@ -13,7 +13,7 @@ class Task extends Component {
     
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!
         {this.setState({topic: this.props.location.state.id})}
-        this.loadTasks()
+        this.loadTasks('vr', 'discretequestions')
             .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
     }
 
@@ -63,22 +63,23 @@ class Task extends Component {
         );
     }
     
-     async loadTasks() {
-        const response = await fetch('task');
-        const response1 = await fetch('task/gettasks', {
+     async loadTasks(topic, taskType) {
+        const path = `task/${topic}/${taskType}`;
+        console.log(path,'paaath');
+        const response = await fetch(path, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ taskType: 'multiplechoice'})
+            body: JSON.stringify({ tasktype:"DiscreteQuestions", level: "Easy", topic:"VerbalReasoning"})
         });
-         console.log('response1');
-         console.log(response1);
-         console.log('data 1');
-         console.log(response1.json());
+        
         const data = await response.json();
-        this.setState({tasks: data, loading: false});
+        this.setState({tasks: data[0].tasks, loading: false});
+    }
+
+    componentSwitcher(type) {
     }
 }
 

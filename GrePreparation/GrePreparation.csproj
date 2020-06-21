@@ -25,6 +25,7 @@
 		<Content Include="ClientApp\src\Components\Progress.js" />
 		<Content Include="ClientApp\src\Components\Rating.js" />
 		<Content Include="ClientApp\src\Components\Task.js" />
+		<Content Include="ClientApp\src\Components\TaskType\VerbalReasoning\DiscreteQuestions.js" />
 		<Content Include="ClientApp\src\Components\TaskType\VerbalReasoning\ReadingComprehension\MultipleChoiceQuestion.js" />
 		<Content Include="ClientApp\src\Components\Topics.js" />
 		<Content Include="ClientApp\src\Components\TopicTasks.js" />

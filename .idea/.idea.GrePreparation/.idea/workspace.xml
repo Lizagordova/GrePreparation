@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d82596e-ef9d-4b6a-abf0-36cd8424fea9" name="Default Changelist" comment="Начала списывать роутинг у Вадима">
-      <change afterPath="$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TaskType/VerbalReasoning/DiscreteQuestions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GrePreparation/ReadModels/DiscreteQuestionTask.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GrePreparation/ReadModels/VR_DiscreteQuestions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GrePreparation/data/VerbalReasoning/DiscreteQuestions/Easy.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/Models/Answer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Models/Answer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,19 +40,26 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GrePreparation/data/tasks/StandardDeviationAndNormalDistribution.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/12891E82-5FCE-44A5-81E5-BBBB579C1D49/4/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/12891E82-5FCE-44A5-81E5-BBBB579C1D49/11/JsonSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Models/Task.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/12891E82-5FCE-44A5-81E5-BBBB579C1D49/3A/ValidationUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/12891E82-5FCE-44A5-81E5-BBBB579C1D49/53/JsonSerializerInternalReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/ClientApp/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/WeatherForecast.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GrePreparation/ReadModels/DiscreteQuestionTask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GrePreparation/ReadModels/VR_DiscreteQuestions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/ClientApp/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GrePreparation/Models/Answer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GrePreparation/data/VerbalReasoning/DiscreteQuestions/Easy.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,9 +80,6 @@
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/functions/breadcrumbsFunctions.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/LearnWords.js" />
         <option value="$PROJECT_DIR$/GrePreparation/data/tasks/StandardDeviationAndNormalDistribution.json" />
-        <option value="$PROJECT_DIR$/GrePreparation/Models/Answer.cs" />
-        <option value="$PROJECT_DIR$/GrePreparation/Program.cs" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/package-lock.json" />
         <option value="$PROJECT_DIR$/GrePreparation/Models/Task.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Home.js" />
@@ -88,8 +98,16 @@
         <option value="$PROJECT_DIR$/GrePreparation/Controllers/WeatherForecastController.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/Startup.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/Models/RequestModel.cs" />
-        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" />
+        <option value="$PROJECT_DIR$/GrePreparation/ReadModels/VR_DIiscreteQuestions.cs" />
+        <option value="$PROJECT_DIR$/GrePreparation/ReadModels/DiscreteQuestionTask.cs" />
+        <option value="$PROJECT_DIR$/GrePreparation/ReadModels/VR_DiscreteQuestions.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" />
+        <option value="$PROJECT_DIR$/GrePreparation/Program.cs" />
+        <option value="$PROJECT_DIR$/GrePreparation/Models/Answer.cs" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/data/topics.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/data/VerbalReasoning/DiscreteQuestions/Easy.json" />
+        <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" />
       </list>
     </option>
   </component>
@@ -186,7 +204,8 @@
       <workItem from="1592378116410" duration="5674000" />
       <workItem from="1592475668437" duration="4058000" />
       <workItem from="1592561117517" duration="5703000" />
-      <workItem from="1592637985089" duration="3659000" />
+      <workItem from="1592637985089" duration="3798000" />
+      <workItem from="1592729327193" duration="4374000" />
     </task>
     <task id="LOCAL-00001" summary="Начала списывать роутинг у Вадима">
       <created>1592564612916</created>
@@ -225,90 +244,90 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="127" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1592478568449" />
-    <state width="905" height="310" key="GridCell.Tab.0.bottom" timestamp="1592641879197">
+    <state width="1557" height="176" key="GridCell.Tab.0.bottom" timestamp="1592733457331">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="905" height="310" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592641879197" />
-    <state width="905" height="310" key="GridCell.Tab.0.center" timestamp="1592641879197">
+    <state width="1557" height="176" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592733457331" />
+    <state width="1557" height="176" key="GridCell.Tab.0.center" timestamp="1592733457330">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="905" height="310" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592641879197" />
-    <state width="905" height="310" key="GridCell.Tab.0.left" timestamp="1592641879196">
+    <state width="1557" height="176" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592733457330" />
+    <state width="1557" height="176" key="GridCell.Tab.0.left" timestamp="1592733457330">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="905" height="310" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592641879196" />
-    <state width="905" height="310" key="GridCell.Tab.0.right" timestamp="1592641879197">
+    <state width="1557" height="176" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592733457330" />
+    <state width="1557" height="176" key="GridCell.Tab.0.right" timestamp="1592733457330">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="905" height="310" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592641879197" />
-    <state width="754" height="327" key="GridCell.Tab.1.bottom" timestamp="1592639907641">
+    <state width="1557" height="176" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592733457330" />
+    <state width="1557" height="327" key="GridCell.Tab.1.bottom" timestamp="1592732243227">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592639907641" />
-    <state width="754" height="327" key="GridCell.Tab.1.center" timestamp="1592639907640">
+    <state width="1557" height="327" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592732243227" />
+    <state width="1557" height="327" key="GridCell.Tab.1.center" timestamp="1592732243227">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1592639907640" />
-    <state width="754" height="327" key="GridCell.Tab.1.left" timestamp="1592639907640">
+    <state width="1557" height="327" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1592732243227" />
+    <state width="1557" height="327" key="GridCell.Tab.1.left" timestamp="1592732243227">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1592639907639" />
-    <state width="754" height="327" key="GridCell.Tab.1.right" timestamp="1592639907640">
+    <state width="1557" height="327" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1592732243227" />
+    <state width="1557" height="327" key="GridCell.Tab.1.right" timestamp="1592732243227">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1592639907640" />
-    <state width="754" height="327" key="GridCell.Tab.2.bottom" timestamp="1592639907642">
+    <state width="1557" height="327" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1592732243227" />
+    <state width="1557" height="327" key="GridCell.Tab.2.bottom" timestamp="1592732243228">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592639907642" />
-    <state width="754" height="327" key="GridCell.Tab.2.center" timestamp="1592639907641">
+    <state width="1557" height="327" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592732243228" />
+    <state width="1557" height="327" key="GridCell.Tab.2.center" timestamp="1592732243228">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1592639907641" />
-    <state width="754" height="327" key="GridCell.Tab.2.left" timestamp="1592639907641">
+    <state width="1557" height="327" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1592732243228" />
+    <state width="1557" height="327" key="GridCell.Tab.2.left" timestamp="1592732243227">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1592639907641" />
-    <state width="754" height="327" key="GridCell.Tab.2.right" timestamp="1592639907641">
+    <state width="1557" height="327" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1592732243227" />
+    <state width="1557" height="327" key="GridCell.Tab.2.right" timestamp="1592732243228">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1592639907641" />
-    <state width="754" height="327" key="GridCell.Tab.3.bottom" timestamp="1592639907643">
+    <state width="1557" height="327" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1592732243228" />
+    <state width="1557" height="327" key="GridCell.Tab.3.bottom" timestamp="1592732243229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.3.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592639907643" />
-    <state width="754" height="327" key="GridCell.Tab.3.center" timestamp="1592639907642">
+    <state width="1557" height="327" key="GridCell.Tab.3.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592732243229" />
+    <state width="1557" height="327" key="GridCell.Tab.3.center" timestamp="1592732243229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.3.center/0.0.1600.860@0.0.1600.860" timestamp="1592639907642" />
-    <state width="754" height="327" key="GridCell.Tab.3.left" timestamp="1592639907642">
+    <state width="1557" height="327" key="GridCell.Tab.3.center/0.0.1600.860@0.0.1600.860" timestamp="1592732243229" />
+    <state width="1557" height="327" key="GridCell.Tab.3.left" timestamp="1592732243228">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.3.left/0.0.1600.860@0.0.1600.860" timestamp="1592639907642" />
-    <state width="754" height="327" key="GridCell.Tab.3.right" timestamp="1592639907643">
+    <state width="1557" height="327" key="GridCell.Tab.3.left/0.0.1600.860@0.0.1600.860" timestamp="1592732243228" />
+    <state width="1557" height="327" key="GridCell.Tab.3.right" timestamp="1592732243229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.3.right/0.0.1600.860@0.0.1600.860" timestamp="1592639907643" />
-    <state width="754" height="327" key="GridCell.Tab.4.bottom" timestamp="1592639907643">
+    <state width="1557" height="327" key="GridCell.Tab.3.right/0.0.1600.860@0.0.1600.860" timestamp="1592732243229" />
+    <state width="1557" height="327" key="GridCell.Tab.4.bottom" timestamp="1592732243230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.4.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592639907643" />
-    <state width="754" height="327" key="GridCell.Tab.4.center" timestamp="1592639907643">
+    <state width="1557" height="327" key="GridCell.Tab.4.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592732243230" />
+    <state width="1557" height="327" key="GridCell.Tab.4.center" timestamp="1592732243230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.4.center/0.0.1600.860@0.0.1600.860" timestamp="1592639907643" />
-    <state width="754" height="327" key="GridCell.Tab.4.left" timestamp="1592639907643">
+    <state width="1557" height="327" key="GridCell.Tab.4.center/0.0.1600.860@0.0.1600.860" timestamp="1592732243230" />
+    <state width="1557" height="327" key="GridCell.Tab.4.left" timestamp="1592732243229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.4.left/0.0.1600.860@0.0.1600.860" timestamp="1592639907643" />
-    <state width="754" height="327" key="GridCell.Tab.4.right" timestamp="1592639907643">
+    <state width="1557" height="327" key="GridCell.Tab.4.left/0.0.1600.860@0.0.1600.860" timestamp="1592732243229" />
+    <state width="1557" height="327" key="GridCell.Tab.4.right" timestamp="1592732243230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="327" key="GridCell.Tab.4.right/0.0.1600.860@0.0.1600.860" timestamp="1592639907643" />
-    <state x="78" y="165" width="689" height="536" key="find.popup" timestamp="1592565684227">
+    <state width="1557" height="327" key="GridCell.Tab.4.right/0.0.1600.860@0.0.1600.860" timestamp="1592732243230" />
+    <state x="78" y="165" width="689" height="536" key="find.popup" timestamp="1592732840228">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="78" y="165" width="689" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1592565684227" />
+    <state x="78" y="165" width="689" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1592732840228" />
     <state x="131" y="199" key="run.anything.popup" timestamp="1592384215789">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -323,13 +342,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs</url>
-          <line>38</line>
+          <line>35</line>
           <properties documentPath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" initialLine="33">
             <startOffsets>
-              <option value="1047" />
+              <option value="984" />
             </startOffsets>
             <endOffsets>
-              <option value="1060" />
+              <option value="997" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

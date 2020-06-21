@@ -103,6 +103,7 @@
               <e p="TaskType" t="Include">
                 <e p="QuantitativeReasoning" t="Include" />
                 <e p="VerbalReasoning" t="Include">
+                  <e p="DiscreteQuestions.js" t="Include" />
                   <e p="ReadingComprehension" t="Include">
                     <e p="MultipleChoiceQuestion.js" t="Include" />
                   </e>
@@ -149,6 +150,11 @@
           <e p="Tasks" t="Include">
             <e p="StandardDeviationAndNormalDistribution.json" t="Include" />
           </e>
+          <e p="VerbalReasoning" t="Include">
+            <e p="DiscreteQuestions" t="Include">
+              <e p="Easy.json" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="GrePreparation.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
@@ -172,6 +178,10 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="ReadModels" t="Include">
+          <e p="DiscreteQuestionTask.cs" t="Include" />
+          <e p="VR_DiscreteQuestions.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />

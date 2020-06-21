@@ -22,7 +22,8 @@
     {id:20, title:'Fuctions, Formulas and Sequences', subtopics:[], breadcrumbs: [0, 1, 7, 9, 20]},
     {id:21, title:'Variables in-the-choices problems', subtopics:[], breadcrumbs: [0, 1, 7, 9, 21]},
     {id:22, title:'Rates and Work', subtopics:[], breadcrumbs: [0, 1, 7, 9, 22]},
-    {id:23, title:"Standard Deviation And Normal Distribution", subtopics:[], breadcrumbs:[0, 1, 7, 11, 23]}
+    {id:23, title:"Standard Deviation And Normal Distribution", subtopics:[], breadcrumbs:[0, 1, 7, 11, 23]},
+    {id:24, title:"Discrete Questions", subtopics:[], breadcrumbs: [0, 1, 8, 24]}
 ];
 
 export default TOPICS;
