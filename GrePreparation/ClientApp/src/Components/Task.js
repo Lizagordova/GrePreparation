@@ -1,5 +1,7 @@
 ﻿import React, { Component, PureComponent} from 'react';
 import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
+import  TOPICS  from '../data/topics';
+import DiscreteQuestions from "./TaskType/VerbalReasoning/DiscreteQuestions";
 
 class Task extends Component {
     constructor(props) {
@@ -7,53 +9,31 @@ class Task extends Component {
         this.state = {
             tasks: [],
             loading: true,
-            topic: 0
+            topic: 0,
+            globalTopic: 0,
+            taskType: 0
         }
     }
     
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!
-        {this.setState({topic: this.props.location.state.id})}
-        this.loadTasks('vr', 'discretequestions')
+        this.setState({topic: this.props.location.state.id});
+        let top = TOPICS.find(topic => topic.id == this.props.location.state.id);
+        let globalTopic = TOPICS.find(topic => topic.id == top.breadcrumbs[2]);
+        let taskType = TOPICS.find(topic => topic.id == top.breadcrumbs[top.breadcrumbs.length-1]);
+        this.setState({globalTopic: globalTopic, taskType: taskType});
+        console.log(this.getTopic(globalTopic.title), this.getTaskType(taskType.title));
+        this.loadTasks(this.getTopic(globalTopic.title), this.getTaskType(taskType.title))
             .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
     }
 
-    static renderAnswers(answers) {
-        return (
-            <>
-                <ul>
-                {answers.map(answer =>
-                    <div className="form-check" key={answer.id}>
-                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-                            <label className="form-check-label" htmlFor="defaultCheck1">
-                                {answer.answerText}
-                            </label>
-                    </div>)
-                }
-                </ul>
-            </>
-        )
-    }
+
     
-    static renderTasks(tasks) {
-        return (
-            <div className="container">
-                {tasks.map(task =>
-                    <div className="row" key={task.id}>
-                        <div className="col-12">
-                            <span>{task.taskText}</span>
-                            {this.renderAnswers(task.answers)
-                           }
-                        </div>
-                    </div>
-                )}
-            </div>
-        );
-    }
+  
 
     render() {
         let tasks = this.state.loading
             ? <p><em>Loading...</em></p>
-            : Task.renderTasks(this.state.tasks);
+            : this.componentSwitcher(this.state.taskType.title)//Task.renderTasks(this.state.tasks);
 
         return (
              <div>
@@ -65,14 +45,13 @@ class Task extends Component {
     
      async loadTasks(topic, taskType) {
         const path = `task/${topic}/${taskType}`;
-        console.log(path,'paaath');
         const response = await fetch(path, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ tasktype:"DiscreteQuestions", level: "Easy", topic:"VerbalReasoning"})
+            body: JSON.stringify({ tasktype:"DiscreteQuestions", level: "Easy", topic: "VerbalReasoning"})
         });
         
         const data = await response.json();
@@ -80,6 +59,18 @@ class Task extends Component {
     }
 
     componentSwitcher(type) {
+        if(type === 'Discrete Questions')
+            return <DiscreteQuestions tasks={this.state.tasks}/>
+    }
+
+    getTaskType(taskType) {
+        if(taskType === 'Discrete Questions')
+            return 'discretequestions';
+    }
+
+    getTopic(topic) {
+        if(topic === 'Verbal Reasoning')
+            return 'vr';
     }
 }
 

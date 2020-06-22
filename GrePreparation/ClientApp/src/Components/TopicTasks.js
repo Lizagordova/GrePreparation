@@ -1,6 +1,5 @@
 ﻿import React, { Component, PureComponent} from 'react';
 import Topics from './Topics';
-import Task from './Task';
 import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
 import { Redirect } from "react-router-dom";
 import  TOPICS  from '../data/topics';

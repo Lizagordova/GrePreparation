@@ -7,7 +7,7 @@
     {id:5, title:'Progress', subtopics:[], route: '/progress', breadcrumbs: [0, 5]},
     {id:6, title:'Learn Words', subtopics:[], route: '/learnwords', breadcrumbs: [0, 6]},
     {id:7, title:'Quantitative Reasoning', subtopics:[9, 10, 11, 12, 13, 14, 15, 16, 17], route: '/topictasks', breadcrumbs: [0, 1, 7]},
-    {id:8, title:'Verbal Reasoning', subtopics:[], route: './topictasks', breadcrumbs: [0, 1, 8]},
+    {id:8, title:'Verbal Reasoning', subtopics:[24], route: './topictasks', breadcrumbs: [0, 1, 8]},
     {id:9, title:'Algebra', subtopics:[11, 12, 13, 14, 15], breadcrumbs: [0, 1, 7 ,9]},
     {id:10, title:'Number properties', subtopics:[], breadcrumbs: [0, 1, 7, 10]},
     {id:11, title:'Statistics', subtopics:[23], breadcrumbs: [0, 1, 7, 11]},
