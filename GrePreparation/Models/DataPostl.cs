@@ -7,5 +7,6 @@ namespace GrePreparation.Models
 		public string TaskType { get; set; }
 		public string Level { get; set; }
 		public string Topic { get; set; }
+		public string Subtopic { get; set; }
 	}
 }
