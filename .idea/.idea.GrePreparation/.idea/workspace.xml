@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d82596e-ef9d-4b6a-abf0-36cd8424fea9" name="Default Changelist" comment="Начала списывать роутинг у Вадима">
-      <change afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TaskType/QuantitativeReasoning/NumericEntryQuestion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrePreparation/enums/TaskType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GrePreparation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TaskType/QuantitativeReasoning/NumericEntryQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TaskType/QuantitativeReasoning/NumericEntryQuestion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/GrePreparation.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/Models/Task.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/Models/Task.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrePreparation/data/tasks/StandardDeviationAndNormalDistribution.json" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/data/QuantitativeReasoning/StandardDeviationAndNormalDistribution.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrePreparation/data/QuantitativeReasoning/StandardDeviationAndNormalDistribution.json" beforeDir="false" afterPath="$PROJECT_DIR$/GrePreparation/data/QuantitativeReasoning/StandardDeviationAndNormalDistribution.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,12 +98,12 @@
         <option value="$PROJECT_DIR$/GrePreparation/enums/TaskType.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/data/tasks/StandardDeviationAndNormalDistribution.json" />
         <option value="$PROJECT_DIR$/GrePreparation/Models/DataPostl.cs" />
-        <option value="$PROJECT_DIR$/GrePreparation/data/QuantitativeReasoning/StandardDeviationAndNormalDistribution.json" />
         <option value="$PROJECT_DIR$/GrePreparation/Models/Task.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TaskType/VerbalReasoning/DiscreteQuestions.js" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/styles/app.css" />
         <option value="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/TaskType/QuantitativeReasoning/NumericEntryQuestion.js" />
+        <option value="$PROJECT_DIR$/GrePreparation/data/QuantitativeReasoning/StandardDeviationAndNormalDistribution.json" />
         <option value="$PROJECT_DIR$/GrePreparation/ClientApp/src/Components/Task.js" />
       </list>
     </option>
@@ -212,6 +206,7 @@
       <workItem from="1592811712117" duration="3945000" />
       <workItem from="1592824760270" duration="423000" />
       <workItem from="1592981659523" duration="8106000" />
+      <workItem from="1593155961176" duration="7745000" />
     </task>
     <task id="LOCAL-00001" summary="Начала списывать роутинг у Вадима">
       <created>1592564612916</created>
@@ -250,22 +245,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="127" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1592478568449" />
-    <state width="754" height="176" key="GridCell.Tab.0.bottom" timestamp="1592989785637">
+    <state width="1557" height="77" key="GridCell.Tab.0.bottom" timestamp="1593163338100">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="176" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1592989785637" />
-    <state width="754" height="176" key="GridCell.Tab.0.center" timestamp="1592989785637">
+    <state width="1557" height="77" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1593163338100" />
+    <state width="1557" height="77" key="GridCell.Tab.0.center" timestamp="1593163338100">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="176" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1592989785637" />
-    <state width="754" height="176" key="GridCell.Tab.0.left" timestamp="1592989785636">
+    <state width="1557" height="77" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1593163338100" />
+    <state width="1557" height="77" key="GridCell.Tab.0.left" timestamp="1593163338100">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="176" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1592989785636" />
-    <state width="754" height="176" key="GridCell.Tab.0.right" timestamp="1592989785637">
+    <state width="1557" height="77" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1593163338100" />
+    <state width="1557" height="77" key="GridCell.Tab.0.right" timestamp="1593163338100">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="176" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1592989785637" />
+    <state width="1557" height="77" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1593163338100" />
     <state width="1557" height="327" key="GridCell.Tab.1.bottom" timestamp="1592733804285">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -348,13 +343,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs</url>
-          <line>23</line>
+          <line>22</line>
           <properties documentPath="$PROJECT_DIR$/GrePreparation/Controllers/TaskController.cs" initialLine="33">
             <startOffsets>
-              <option value="684" />
+              <option value="647" />
             </startOffsets>
             <endOffsets>
-              <option value="697" />
+              <option value="660" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

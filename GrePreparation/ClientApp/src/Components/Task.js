@@ -12,16 +12,24 @@ class Task extends Component {
             topic: 0,
             globalTopic: 0,
             subtopic: 0,
-            order: 0,
+            order: 1,
             update:true
-        }
+        };
+        this.orderChange = this.orderChange.bind(this);
     }
 
-    shouldComponentUpdate() {
-        console.log(this.state.update,'update?')
+   /* shouldComponentUpdate() {
+        console.log('update?', this.state.update);
         return this.state.update === true
+    }*/
+
+    orderChange(order)
+    {
+        this.setState({order: order});
+        this.state.order = order;
+        console.log(this.state.tasks[2], 'task 2');
     }
-    
+
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!
         this.setState({topic: this.props.location.state.id});
         let top = TOPICS.find(topic => topic.id == this.props.location.state.id);
@@ -32,22 +40,23 @@ class Task extends Component {
             .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
     }
 
-    static renderTask(task)
+    renderTask(task)
     {
+        console.log('task from renderTask', task)
         if(task.taskType === 'NumericEntryQuestion')
         {
-            return <NumericEntryQuestion task={task}/>
+            return <NumericEntryQuestion task={task} order={this.state.order} onOrderChanged={this.orderChange}/>
         }
        /* if(task.taskType === 'MultipleChoiceQuestionSelectOneAnswer')
         {
             return <MultipleChoiceQuestionSelectOneAnswer task={task} />
         }*/
     }
-    static renderTasks(tasks) {
-       
+     renderTasks(tasks) {
+        console.log('log 1');
         return (
             <div className="container">
-                {this.renderTask(tasks[1])}
+                {this.renderTask(tasks[this.state.order])}
             </div>
         );
     }
@@ -55,7 +64,7 @@ class Task extends Component {
     render() {
         let tasks = this.state.loading
             ? <p><em>Loading...</em></p>
-            : Task.renderTasks(this.state.tasks)//Task.renderTasks(this.state.tasks);
+            : this.renderTasks(this.state.tasks);
 
         return (
              <div>
@@ -64,7 +73,7 @@ class Task extends Component {
              </div>
         );
     }
-    
+
      async loadTasks(topic, subtopic) {
         const path = `task/${topic}/${subtopic}`;
         const response = await fetch(path, {
@@ -80,12 +89,7 @@ class Task extends Component {
     }
 
     getSubtopic(subtopic) {
-        if (subtopic === 'Discrete Questions') {
-            return subtopic.trim();
-        }
-        if(subtopic === 'Standard Deviation And Normal Distribution') {
-            return subtopic.replace(/\s/g, '');
-        }
+        return subtopic.replace(/\s/g, '');
     }
 
     getTopic(topic) {
