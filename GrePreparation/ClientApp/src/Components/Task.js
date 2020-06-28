@@ -18,16 +18,11 @@ class Task extends Component {
         this.orderChange = this.orderChange.bind(this);
     }
 
-   /* shouldComponentUpdate() {
-        console.log('update?', this.state.update);
-        return this.state.update === true
-    }*/
-
     orderChange(order)
     {
         this.setState({order: order});
         this.state.order = order;
-        console.log(this.state.tasks[2], 'task 2');
+        
     }
 
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!
@@ -42,7 +37,6 @@ class Task extends Component {
 
     renderTask(task)
     {
-        console.log('task from renderTask', task)
         if(task.taskType === 'NumericEntryQuestion')
         {
             return <NumericEntryQuestion task={task} order={this.state.order} onOrderChanged={this.orderChange}/>
@@ -53,7 +47,12 @@ class Task extends Component {
         }*/
     }
      renderTasks(tasks) {
-        console.log('log 1');
+         console.log('from localStorage',localStorage.getItem('completedTasks'))
+        if(!localStorage.getItem('completedTasks'))
+            localStorage.setItem('completedTasks', 'i am here')
+         else console.log(localStorage.getItem('completedTasks'))
+         console.log(localStorage, 'updated Local Storage')
+         console.log('from localStorage',localStorage.getItem('completedTasks'))
         return (
             <div className="container">
                 {this.renderTask(tasks[this.state.order])}
