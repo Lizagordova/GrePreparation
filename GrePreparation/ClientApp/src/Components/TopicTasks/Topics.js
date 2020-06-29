@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import  TOPICS  from '../data/topics';
-import '../styles/topicTasks.css';
+import  TOPICS  from '../../data/topics';
+import '../../styles/topicTasks.css';
 
 class Topics extends Component {
     constructor(props) {

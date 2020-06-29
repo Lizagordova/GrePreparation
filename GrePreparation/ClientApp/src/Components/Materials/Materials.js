@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs from "../Breadcrumbs";
 
 class Materials extends Component {
     constructor(props) {

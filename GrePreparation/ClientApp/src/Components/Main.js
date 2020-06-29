@@ -2,15 +2,15 @@
 import  CheeseburgerMenu  from 'cheeseburger-menu';
 import HamburgerMenu from 'react-hamburger-menu';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Home from './Home';
-import TopicTasks from './TopicTasks'
-import Materials from './Materials';
-import Variants from './Variants';
-import Rating from './Rating';
-import Progress from './Progress';
-import LearnWords from './LearnWords';
+import Home from './Home/Home';
+import TopicTasks from './TopicTasks/TopicTasks'
+import Materials from './Materials/Materials';
+import Variants from './Variants/Variants';
+import Rating from './Rating/Rating';
+import Progress from './Progress/Progress';
+import LearnWords from './Words/LearnWords';
 import Menu from './Menu';
-import Task from './Task';
+import Task from './TopicTasks/Task';
 
 class Main extends Component {
     constructor(props) {

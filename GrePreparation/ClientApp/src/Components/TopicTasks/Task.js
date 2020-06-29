@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
-import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
-import  TOPICS  from '../data/topics';
-import NumericEntryQuestion from "./TaskType/QuantitativeReasoning/NumericEntryQuestion";
+import renderBreadcrumbs from '../../functions/breadcrumbsFunctions';
+import  TOPICS  from '../../data/topics';
+import NumericEntryQuestion from "../TaskType/QuantitativeReasoning/NumericEntryQuestion";
 
 class Task extends Component {
     constructor(props) {

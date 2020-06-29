@@ -1,5 +1,4 @@
 ﻿import React, { Component } from 'react';
-import { Row } from 'reactstrap';
 
 class NumericEntryQuestion extends Component {
     constructor(props) {

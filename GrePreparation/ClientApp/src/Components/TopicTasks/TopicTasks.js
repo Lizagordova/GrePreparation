@@ -1,8 +1,8 @@
-﻿import React, { Component, PureComponent} from 'react';
+﻿import React, { Component } from 'react';
 import Topics from './Topics';
-import renderBreadcrumbs from '../functions/breadcrumbsFunctions';
+import renderBreadcrumbs from '../../functions/breadcrumbsFunctions';
 import { Redirect } from "react-router-dom";
-import  TOPICS  from '../data/topics';
+import  TOPICS  from '../../data/topics';
 
 class TopicTasks extends Component {
     constructor(props) {

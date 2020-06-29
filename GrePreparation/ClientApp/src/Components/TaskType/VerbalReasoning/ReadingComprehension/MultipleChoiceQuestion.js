@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 
-class MultipleChoiceQuestion extends React {
+class MultipleChoiceQuestion extends Component {
     constructor(props) {
         super(props);
         this.state = {
