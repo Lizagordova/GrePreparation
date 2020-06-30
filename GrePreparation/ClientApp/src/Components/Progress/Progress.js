@@ -1,6 +1,8 @@
 ﻿import renderBreadcrumbs from "../../functions/breadcrumbsFunctions";
 import React, { Component }  from 'react';
-
+import { ProgressBar, Step} from 'react-step-progress-bar';
+import "react-step-progress-bar/styles.css";
+import '../../styles/progress.css'
 class Progress extends Component {
     constructor(props) {
         super(props);
@@ -18,10 +20,14 @@ class Progress extends Component {
     }
     
     renderProgress() {
+        //здесь добавить progressBar
         return(
-            <div>
-                <span>Сделано {this.state.userMadeADay} из {this.state.totalCount} слов</span>
-            </div>
+            <>
+                <ProgressBar percent={75} filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"/>
+                <div>
+                    <span>Сделано {this.state.userMadeTotal} из {this.state.totalCount} слов</span>
+                </div>
+            </>
         );
     }
 
@@ -29,9 +35,9 @@ class Progress extends Component {
         let progress = this.state.loading
             ? <p><em>Loading...</em></p>
             : this.renderProgress();
+            //{renderBreadcrumbs(this.props)} в return положить
         return(
-            <div>
-                {renderBreadcrumbs(this.props)}
+            <div>                
                 {progress}
             </div>
         )
@@ -48,7 +54,7 @@ class Progress extends Component {
             body: JSON.stringify({userId: userId, section: section, topic: topic})//здесь возможно можно так: userId,section,topic...
         });
         const data = await response.json();
-        this.setState({totalCount: data.totalCount, userMadeTotal: data.userMadeTotal, userMadeADay: data.userMadeADay})
+        this.setState({totalCount: data.totalCount, userMadeTotal: data.userMadeTotal, userMadeADay: data.userMadeADay, loading: false})
     }
 }
 

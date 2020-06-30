@@ -8,7 +8,7 @@ import Materials from './Materials/Materials';
 import Variants from './Variants/Variants';
 import Rating from './Rating/Rating';
 import Progress from './Progress/Progress';
-import LearnWords from './Words/LearnWords';
+import Words from './Words/Words';
 import Menu from './Menu';
 import Task from './TopicTasks/Task';
 
@@ -58,7 +58,7 @@ class Main extends Component {
                     <Route path="/variants" component={Variants}/>
                     <Route path="/rating" component={Rating}/>
                     <Route path="/progress" component={Progress}/>
-                    <Route path="/learnwords" component={() => <LearnWords topic={6}/>}/>
+                    <Route path="/words" component={() => <Words topic={6}/>}/>
                     <Redirect to="/home" />
                 </Switch>
             </div>

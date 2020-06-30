@@ -1,8 +1,9 @@
 ﻿import React, { Component } from 'react';
 import renderBreadcrumbs from '../../functions/breadcrumbsFunctions';
 import { Link } from 'react-router-dom';
+import Progress from '../Progress/Progress'
 
-class LearnWords extends Component {
+class Words extends Component {
     
     render() {
         return(
@@ -17,6 +18,7 @@ class LearnWords extends Component {
                             <div className="mx-auto">
                                 <button className="words">
                                 Essential
+                                    
                                 </button>
                             </div>
                         </Link>
@@ -26,6 +28,7 @@ class LearnWords extends Component {
                             <div className="mx-auto">
                                 <button className="words">
                                     Advanced
+                                    <Progress userId="localhost" section="words" topic="advanced"/>
                                 </button>
                             </div>
                         </Link>
@@ -33,9 +36,8 @@ class LearnWords extends Component {
                 </div>
             </div>
             </>
-                
         );
     }
 }
 
-export default LearnWords;
+export default Words;

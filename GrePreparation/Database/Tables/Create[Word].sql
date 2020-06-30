@@ -6,5 +6,6 @@
 	[Image] NVARCHAR(250),
 	[Sound] NVARCHAR(250),
 	[Synonim] NVARCHAR(50),
-	[Level] NVARCHAR(20)
+	[Level] NVARCHAR(20),
+	[Sublevel] INT
 )

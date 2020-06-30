@@ -5,9 +5,12 @@
 AS
 	IF (@section = 'words')
 	BEGIN
-			SELECT COUNT(*)
-			FROM Word WHERE Level = @topic;
-			SELECT COUNT(*) FROM User_Word
-			WHERE [WordId] IN (select [Id] from [Word] where level = @topic);
+		DECLARE @totalCount INT;
+		DECLARE @userFinishedTotal INT;
+		SET @totalCount = (SELECT COUNT(*)
+			FROM Word WHERE Level = @topic);
+		SET @userFinishedTotal = (SELECT COUNT(*) FROM User_Word
+			WHERE [WordId] IN (select [Id] from [Word] where level = @topic));
+		SELECT @totalCount, @userFinishedTotal;
 	END
 RETURN 0
