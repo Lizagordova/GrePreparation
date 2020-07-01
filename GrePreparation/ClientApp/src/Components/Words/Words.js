@@ -24,14 +24,14 @@ class Words extends Component {
                         </Link>
                     </div>
                     <div className="col-md-6 col-sm-6 col-xs-12 justify-content-center">
-                        <Link to="#">
                             <div className="mx-auto">
-                                <button className="words">
-                                    Advanced
-                                    <Progress userId="localhost" section="words" topic="advanced"/>
-                                </button>
+                                <Link to={"/words/levels"} >
+                                    <button className="words">
+                                        Advanced
+                                        <Progress userId="localhost" section="words" topic="advanced"/>
+                                    </button>
+                                </Link>
                             </div>
-                        </Link>
                     </div>
                 </div>
             </div>

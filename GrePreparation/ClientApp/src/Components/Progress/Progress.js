@@ -20,7 +20,6 @@ class Progress extends Component {
     }
     
     renderProgress() {
-        //здесь добавить progressBar
         return(
             <>
                 <ProgressBar percent={75} filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"/>

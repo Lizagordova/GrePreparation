@@ -11,6 +11,7 @@ import Progress from './Progress/Progress';
 import Words from './Words/Words';
 import Menu from './Menu';
 import Task from './TopicTasks/Task';
+import LevelsPage from './Words/LevelsPage';
 
 class Main extends Component {
     constructor(props) {
@@ -58,8 +59,9 @@ class Main extends Component {
                     <Route path="/variants" component={Variants}/>
                     <Route path="/rating" component={Rating}/>
                     <Route path="/progress" component={Progress}/>
+                    <Route exact path="/words/levels" component={() => <LevelsPage userId={"localhost"} section={"essential"} />}/>
                     <Route path="/words" component={() => <Words topic={6}/>}/>
-                    <Redirect to="/home" />
+                   <Redirect to="/home" />
                 </Switch>
             </div>
         );

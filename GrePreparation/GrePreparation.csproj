@@ -31,6 +31,7 @@
 		<Content Include="ClientApp\src\Components\TopicTasks\Topics.js" />
 		<Content Include="ClientApp\src\Components\TopicTasks\TopicTasks.js" />
 		<Content Include="ClientApp\src\Components\Variants\Variants.js" />
+		<Content Include="ClientApp\src\Components\Words\LevelsPage.js" />
 		<Content Include="ClientApp\src\Components\Words\Words.js" />
 		<Content Include="ClientApp\src\data\topics.js" />
 		<Content Include="ClientApp\src\helpers\TaskType.js" />
@@ -42,6 +43,10 @@
 		<Content Include="ClientApp\src\styles\topicTasks.css" />
 		<None Remove="$(SpaRoot)**" />
 		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Services" />
 	</ItemGroup>
 
 	<Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

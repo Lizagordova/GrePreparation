@@ -1,7 +1,9 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using GrePreparation.Models.QueryPost;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
+using GrePreparation.Helpers;
 using GrePreparation.Models;
 
 namespace GrePreparation.Controllers
@@ -12,9 +14,7 @@ namespace GrePreparation.Controllers
 		[Route("progress")]
 		public Progress GetProgress([FromBody]ProgressQuery query)
 		{
-			var connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=GrePreparation;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-			var connection = new SqlConnection(connectionString);
-			connection.Open();
+			var connection = DatabaseHelper.OpenConnection();
 			var command = new SqlCommand("ProgressRepository_GetUserProgress", connection);
 			command.CommandType = CommandType.StoredProcedure;
 			var userId = new SqlParameter{ ParameterName = "@userId", Value = query.UserId };
@@ -34,9 +34,37 @@ namespace GrePreparation.Controllers
 				}
 			}
 
-			connection.Close();
+			DatabaseHelper.CloseConnection(connection);
 			return progress;
 		}
-		
+
+		[HttpPost]
+		[Route("words/progress")]
+		public List<Progress> GetWordsProgress([FromBody]ProgressQuery query)
+		{
+			var connection = DatabaseHelper.OpenConnection();
+			var command = new SqlCommand("ProgressRepository_GetWordsProgress", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			var userId = new SqlParameter{ ParameterName = "@userId", Value = query.UserId };
+			var level = new SqlParameter{ ParameterName = "@level", Value = query.Section };
+			command.Parameters.Add(userId);
+			command.Parameters.Add(level);
+			command.ExecuteNonQuery();
+			var progress = new List<Progress>();
+			using (var reader = command.ExecuteReader())
+			{
+				while (reader.Read())
+				{
+					var levelProgress = new Progress();
+					levelProgress.Level = int.Parse(reader[0].ToString());
+					levelProgress.TotalCount = int.Parse(reader[1].ToString());
+					levelProgress.UserFinishedTotal = int.Parse(reader[2].ToString());
+					progress.Add(levelProgress);
+				}
+			}
+
+			DatabaseHelper.CloseConnection(connection);
+			return progress; 
+		}
 	}
 }

@@ -36,7 +36,7 @@ class Menu extends Component {
                         <span className="fa fa-home fa-lg">Прогресс</span></NavLink>
                 </NavItem>
                 <NavItem className="menu-item">
-                    <NavLink className="nav-link" to="/learnwords" onClick={this.props.closeCallback}>
+                    <NavLink className="nav-link" to="/words" onClick={this.props.closeCallback}>
                         <span className="fa fa-home fa-lg">Учить слова</span></NavLink>
                 </NavItem>
             </div>
