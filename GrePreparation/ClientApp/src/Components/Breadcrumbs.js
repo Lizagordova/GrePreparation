@@ -15,8 +15,8 @@ class Breadcrumbs extends Component {
         this.setState({ breadcrumbs : []})
     }
 
-    loadBreadcrumbs(topicId) {
-        let topic = TOPICS.find(topic => topic.id == topicId);
+    loadBreadcrumbs(topicCleanTitle) {
+        let topic = TOPICS.find(topic => topic.cleanTitle == topicCleanTitle);
         let breadcrumbs = topic.breadcrumbs;
         for(let i = 0; i < breadcrumbs.length; i++)
         {
@@ -33,7 +33,7 @@ class Breadcrumbs extends Component {
                     {this.state.breadcrumbs.map(breadcrumb => {
                         return(
                         <BreadcrumbItem key={breadcrumb.id}>
-                            {breadcrumb.id !== 0 && <Link to={`/topictasks/${breadcrumb.id}`} className="breadcrumbLink">{breadcrumb.title}</Link>}
+                            {breadcrumb.id !== 0 && <Link to={`/topictasks/${breadcrumb.cleanTitle}`} className="breadcrumbLink">{breadcrumb.title}</Link>}
                             {breadcrumb.id === 0 && <Link to="/home" className="breadcrumbLink">{breadcrumb.title}</Link>}
                         </BreadcrumbItem>
                         );

@@ -52,8 +52,9 @@ class Main extends Component {
                 />
                 <Switch>
                     <Route path="/home" component={Home}/>
-                    <Route exact path="/topictasks" component={() => <TopicTasks topic={1}/>}/>
+                    <Route exact path="/topictasks" component={() => <TopicTasks topic={"TopicTasks"}/>}/>
                     <Route exact path="/topictasks/task" component={Task}/>
+                    <Route exact path="/topictasks/:cleanTitle" component={TopicTasks} />
                     <Route exact path="/topictasks/:id" component={TopicTasks} />
                     <Route path="/materials" component={() => <Materials breadcrumbs={[0,2]}/>}/>
                     <Route path="/variants" component={Variants}/>

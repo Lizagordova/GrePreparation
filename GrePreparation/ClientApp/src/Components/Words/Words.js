@@ -18,7 +18,6 @@ class Words extends Component {
                             <div className="mx-auto">
                                 <button className="words">
                                 Essential
-                                    
                                 </button>
                             </div>
                         </Link>

@@ -1,4 +1,6 @@
 ﻿import React, { Component }  from 'react';
+import {ProgressBar} from "react-step-progress-bar";
+import renderBreadcrumbs from '../../functions/breadcrumbsFunctions';
 
 class LevelsPage extends Component {
     constructor(props) {
@@ -20,8 +22,22 @@ class LevelsPage extends Component {
     }
 
     renderLevels() {
+        console.log(this.state.progress,'progress in levels page');
         return(
-            <div>
+            <div className="container">
+                {this.state.progress.map(progress => {
+                    return(
+                            <div className="row justify-content-center">
+                                <div className="level">
+                                    <span>Level {progress.level}</span>
+                                
+                                <div className="progressBarDiv">
+                                <ProgressBar percent={progress.userFinishedTotal/progress.totalCount * 100}  filledBackground="linear-gradient(to right, #CD5C5C, #F08080)" unfilledBackground="linear-gradient(to right, #E6E6FA, #D8BFD8)"/>
+                                </div>
+                                </div>
+                            </div>
+                    );
+                })}
             </div>
         )
     }
@@ -31,6 +47,7 @@ class LevelsPage extends Component {
             : this.renderLevels();
         return(
             <div>
+                {renderBreadcrumbs(this.props)}
                 {levels}
             </div>
         );
@@ -49,7 +66,7 @@ class LevelsPage extends Component {
         console.log(response,'response in  levels page');
         const data = await response.json();
         console.log(data,'data in  levels page');
-        
+        this.setState({progress: data, loading: false});
     }
 }
 
