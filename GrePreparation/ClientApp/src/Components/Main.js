@@ -51,17 +51,20 @@ class Main extends Component {
                     animationDuration={0.5}
                 />
                 <Switch>
-                    <Route path="/home" component={Home}/>
-                    <Route exact path="/topictasks" component={() => <TopicTasks topic={"TopicTasks"}/>}/>
-                    <Route exact path="/topictasks/task" component={Task}/>
-                    <Route exact path="/topictasks/:cleanTitle" component={TopicTasks} />
-                    <Route exact path="/topictasks/:id" component={TopicTasks} />
-                    <Route path="/materials" component={() => <Materials breadcrumbs={[0,2]}/>}/>
-                    <Route path="/variants" component={Variants}/>
-                    <Route path="/rating" component={Rating}/>
-                    <Route path="/progress" component={Progress}/>
-                    <Route exact path="/words/levels" component={() => <LevelsPage userId={"localhost"} section={"essential"} />}/>
-                    <Route path="/words" component={() => <Words topic={6}/>}/>
+                    <Route exact path="/home/words/levels" component={() => <LevelsPage userId={"localhost"} section={"essential"} cleanTitle={"Levels"}/>}/>
+                    <Route exact path="/home/words" component={() => <Words cleanTitle={"learnwords"}/>}/>
+                    <Route exact path="/home/topictasks/:cleanTitle/:cleanTitle/:cleanTitle/task" component={Task}/>
+                    <Route exact path="/home/topictasks/:cleanTitle/:cleanTitle/task" component={Task}/>
+                    <Route exact path="/home/topictasks/:cleanTitle/:cleanTitle/:cleanTitle" component={TopicTasks} />
+                    <Route exact path="/home/topictasks/:cleanTitle/:cleanTitle" component={TopicTasks} />
+                    <Route exact path="/home/topictasks/:cleanTitle" component={TopicTasks} />
+                    <Route exact path="/home/topictasks" component={() => <TopicTasks cleanTitle={"TopicTasks"}/>}/>
+                    <Route exact path="/home" component={Home}/>
+                    <Route exact path="/materials" component={() => <Materials breadcrumbs={[0,2]}/>}/>
+                    <Route exact  path="/variants" component={Variants}/>
+                    <Route exact path="/rating" component={Rating}/>
+                    <Route exact path="/progress" component={Progress}/>
+                   
                    <Redirect to="/home" />
                 </Switch>
             </div>

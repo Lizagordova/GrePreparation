@@ -9,7 +9,7 @@ class Task extends Component {
         this.state = {
             tasks: [],
             loading: true,
-            topic: 0,
+            topicId: 0,
             globalTopic: 0,
             subtopic: 0,
             order: 1,
@@ -26,13 +26,13 @@ class Task extends Component {
     }
 
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!
-        this.setState({topic: this.props.location.state.id});
-        let top = TOPICS.find(topic => topic.id == this.props.location.state.id);
-        let globalTopic = TOPICS.find(topic => topic.id == top.breadcrumbs[2]);
-        let subtopic = TOPICS.find(topic => topic.id == top.breadcrumbs[top.breadcrumbs.length-1]);
+        let topic = TOPICS.find(topic => topic.id == this.props.location.state.id);
+        this.setState({topicId: topic.id});
+        let globalTopic = TOPICS.find(top => top.id == topic.breadcrumbs[2]);
+        let subtopic = TOPICS.find(top => top.id == topic.breadcrumbs[topic.breadcrumbs.length-1]);
         this.setState({globalTopic: globalTopic, subtopic: subtopic});
          this.loadTasks(this.getTopic(globalTopic.title), this.getSubtopic(subtopic.title))
-            .then(() => console.log('tasks', this.state.tasks));//здесь можно then для вызова renderTasks
+            .then();//здесь можно then для вызова renderTasks
     }
 
     renderTask(task)
@@ -67,14 +67,17 @@ class Task extends Component {
 
         return (
              <div>
-                 {renderBreadcrumbs(this.state)}
+                 {console.log(this.props, 'task props')}
+                 {renderBreadcrumbs(this.props)}
                  {tasks}
              </div>
         );
     }
 
      async loadTasks(topic, subtopic) {
-        const path = `task/${topic}/${subtopic}`;
+        const path=`/home/topictasks/${topic}/datainterpritation/task`;
+      //  const path = `task/${topic}/${subtopic}`;
+        console.log(`subtopic ${subtopic} topic ${topic}`)
         const response = await fetch(path, {
             method: 'POST',
             headers: {
@@ -88,7 +91,7 @@ class Task extends Component {
     }
 
     getSubtopic(subtopic) {
-        return subtopic.replace(/\s/g, '');
+        return subtopic.replace(/\s/g, '').toLowerCase();
     }
 
     getTopic(topic) {

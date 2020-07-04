@@ -15,8 +15,8 @@ class Topics extends Component {
         this.setState({ topics : []})
     }
 
-    loadTopics(cleanTitle) {
-        let topic = TOPICS.find(topic => topic.cleanTitle === cleanTitle);
+    loadTopics(topicId) {
+        let topic = TOPICS.find(topic => topic.id == topicId);
         let subtopics = topic.subtopics;
         for(let i = 0; i < subtopics.length; i++)
         {
@@ -34,7 +34,7 @@ class Topics extends Component {
                     return (
                      <div className="row justify-content-center">
                          <div className="topicDiv" key={topic.id}>
-                         <Link to={`/topictasks/${topic.cleanTitle}`} className="topicLink">
+                         <Link to={{pathname: topic.route, propsSearch: topic.id}} className="topicLink">
                              <button>
                                  {topic.title}
                              </button>
@@ -50,7 +50,8 @@ class Topics extends Component {
     render() {
         return(
             <> 
-                {this.loadTopics(this.props.topic)}
+                {console.log('topics props', this.props)}
+                {this.loadTopics(this.props.id)}
                 {this.renderTopics()}
             </>
         );

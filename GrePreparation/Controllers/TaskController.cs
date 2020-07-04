@@ -44,6 +44,7 @@ namespace GrePreparation.Controllers
 			else return "VerbalReasoning";
 		}
 		[HttpPost]
+		[Route("/home/topictasks/qr/datainterpritation/task")]
 		[Route("topictasks/task/vr/discretequestions")]
 		public IEnumerable<VR_DiscreteQuestions> GetTasks_VR([FromBody]DataPost data)
 		{

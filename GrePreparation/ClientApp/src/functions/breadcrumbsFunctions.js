@@ -1,11 +1,14 @@
 ﻿import Breadcrumbs from "../Components/Breadcrumbs";
 import React from "react";
+import  TOPICS  from '../data/topics';
 
 function renderBreadcrumbs(props) {
     if (props.match !== undefined) {
-        return <Breadcrumbs topic={props.match.params.cleanTitle} />
+        let id = TOPICS.find(topic => topic.cleanTitle === props.match.params.cleanTitle.toLowerCase()).id;
+        return <Breadcrumbs id={id} />
     } else {
-        return <Breadcrumbs topic={props.topic} />
+        let id = TOPICS.find(topic => topic.cleanTitle === props.cleanTitle.toLowerCase()).id;
+        return <Breadcrumbs id={id} />
     }
 }
 

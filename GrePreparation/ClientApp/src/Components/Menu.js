@@ -16,27 +16,27 @@ class Menu extends Component {
                         <span className="fa fa-home fa-lg">Главная</span></NavLink>
                 </NavItem>
                 <NavItem className="menu-item">
-                    <NavLink className="nav-link" to="/topictasks" onClick={this.props.closeCallback}>
+                    <NavLink className="nav-link" to="/home/topictasks" onClick={this.props.closeCallback}>
                         <span className="fa fa-home fa-lg">Задания по темам</span></NavLink>
                 </NavItem>
                 <NavItem className="menu-item">
-                    <NavLink className="nav-link" to="/materials" onClick={this.props.closeCallback}>
+                    <NavLink className="nav-link" to="/home/materials" onClick={this.props.closeCallback}>
                         <span className="fa fa-home fa-lg">Материалы</span></NavLink>
                 </NavItem>
                 <NavItem className="menu-item">
-                    <NavLink className="nav-link" to="/variants" onClick={this.props.closeCallback}>
+                    <NavLink className="nav-link" to="/home/variants" onClick={this.props.closeCallback}>
                         <span className="fa fa-home fa-lg">Варианты</span></NavLink>
                 </NavItem>
                 <NavItem className="menu-item">
-                    <NavLink className="nav-link" to="/rating" onClick={this.props.closeCallback}>
+                    <NavLink className="nav-link" to="/home/rating" onClick={this.props.closeCallback}>
                         <span className="fa fa-home fa-lg">Рейтинг</span></NavLink>
                 </NavItem>
                 <NavItem className="menu-item">
-                    <NavLink className="nav-link" to="/progress" onClick={this.props.closeCallback}>
+                    <NavLink className="nav-link" to="/home/progress" onClick={this.props.closeCallback}>
                         <span className="fa fa-home fa-lg">Прогресс</span></NavLink>
                 </NavItem>
                 <NavItem className="menu-item">
-                    <NavLink className="nav-link" to="/words" onClick={this.props.closeCallback}>
+                    <NavLink className="nav-link" to="/home/words" onClick={this.props.closeCallback}>
                         <span className="fa fa-home fa-lg">Учить слова</span></NavLink>
                 </NavItem>
             </div>

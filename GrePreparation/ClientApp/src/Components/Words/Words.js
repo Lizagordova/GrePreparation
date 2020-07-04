@@ -24,7 +24,7 @@ class Words extends Component {
                     </div>
                     <div className="col-md-6 col-sm-6 col-xs-12 justify-content-center">
                             <div className="mx-auto">
-                                <Link to={"/words/levels"} >
+                                <Link to={"/home/words/levels"} >
                                     <button className="words">
                                         Advanced
                                         <Progress userId="localhost" section="words" topic="advanced"/>

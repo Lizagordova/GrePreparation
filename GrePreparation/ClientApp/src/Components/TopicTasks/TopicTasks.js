@@ -25,13 +25,14 @@ class TopicTasks extends Component {
     renderTopics(props) {
         if (props.match !== undefined) {
             let topic = TOPICS.find(topic => topic.cleanTitle == props.match.params.cleanTitle);
-            if(topic.subtopics == 0)
+            if(topic.subtopics.length == 0)
             {
-               return <Redirect to={{pathname: "/topictasks/task", state: {id: props.match.params.id}}}/> 
+               return <Redirect to={{pathname: `${topic.route}/task`, state: {id: topic.id}}}/> 
             }
-            return <Topics topic={props.match.params.id} />
+            return <Topics id={topic.id} />
         } else {
-            return <Topics topic={props.topic} />}
+            let topic = TOPICS.find(topic => topic.cleanTitle == props.cleanTitle);
+            return <Topics id={topic.id} />}
     }
 
     render() {

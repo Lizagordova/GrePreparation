@@ -11,7 +11,7 @@ namespace GrePreparation.Controllers
 	public class ProgressController : ControllerBase
 	{
 		[HttpPost]
-		[Route("progress")]
+		[Route("home/progress")]
 		public Progress GetProgress([FromBody]ProgressQuery query)
 		{
 			var connection = DatabaseHelper.OpenConnection();
@@ -39,7 +39,7 @@ namespace GrePreparation.Controllers
 		}
 
 		[HttpPost]
-		[Route("words/progress")]
+		[Route("home/words/progress")]
 		public List<Progress> GetWordsProgress([FromBody]ProgressQuery query)
 		{
 			var connection = DatabaseHelper.OpenConnection();

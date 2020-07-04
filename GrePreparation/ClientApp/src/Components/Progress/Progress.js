@@ -15,10 +15,11 @@ class Progress extends Component {
     }
     
     componentDidMount() {
+        console.log('progress props', this.props);
         this.loadProgress(this.props.userId, this.props.section, this.props.topic)
             .then(data => console.log(data));
     }
-    
+
     renderProgress() {
         return(
             <>
@@ -36,7 +37,7 @@ class Progress extends Component {
             : this.renderProgress();
             //{renderBreadcrumbs(this.props)} в return положить
         return(
-            <div>                
+            <div>
                 {progress}
             </div>
         )
@@ -52,6 +53,7 @@ class Progress extends Component {
             },
             body: JSON.stringify({userId: userId, section: section, topic: topic})//здесь возможно можно так: userId,section,topic...
         });
+        console.log('response', response);
         const data = await response.json();
         this.setState({totalCount: data.totalCount, userMadeTotal: data.userMadeTotal, userMadeADay: data.userMadeADay, loading: false})
     }

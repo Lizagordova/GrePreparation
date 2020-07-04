@@ -53,8 +53,7 @@ class LevelsPage extends Component {
         );
     }
     
-    async loadWordProgress(userId, section)
-    {
+    async loadWordProgress(userId, section) {
         const response = await fetch('progress', {
             method: 'POST',
             headers: {
