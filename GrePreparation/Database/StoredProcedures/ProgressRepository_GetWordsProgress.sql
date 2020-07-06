@@ -1,20 +1,56 @@
-﻿CREATE PROCEDURE [ProgressRepository_GetWordsProgress]
+﻿CREATE PROCEDURE [WordRepository_GetWordsByLevel]
 	@userId NVARCHAR(100),
-	@level NVARCHAR(100)
+	@section NVARCHAR(100),
+	@level INT
 AS
 BEGIN
-	DECLARE @userProgress [UDT_UserProgress];
-	INSERT
-	INTO @userProgress(Level, TotalCount, UserFinished)
-	SELECT [w].[Sublevel], COUNT([w].[Sublevel]),
-		(SELECT COUNT(*) FROM [User_Word] 
-		WHERE [Status]='learnt' 
-		AND [UserId]=@userId
-		AND [WordId] IN 
-		(SELECT [Id] FROM [Word] WHERE Sublevel = [w].[Sublevel]))
-	FROM Word as w
-	WHERE Level=@level
-	GROUP BY Sublevel;
+	DECLARE @words [UDT_Word];
+	INSERT 
+	INTO @words (
+		[Id],
+		[Word],
+		[EnglishExplanation],
+		[RussianExplanation],
+		[Image],
+		[Sound],
+		[Synonim],
+		[Status]
+	)
+	SELECT 
+		[Id],
+		[Word],
+		[EnglishExplanation],
+		[RussianExplanation],
+		[Image],
+		[Sound],
+		[Synonim],
+		[uw].[Status]
+	FROM [Word] as [w]
+	JOIN [User_Word] as [uw]
+	ON [w].[Id] = [uw].[WordId]
+	WHERE [Level] = @section AND [Sublevel] = @level AND [uw].[UserId] = @userId 
+	INSERT 
+	INTO @words (
+		[Id],
+		[Word],
+		[EnglishExplanation],
+		[RussianExplanation],
+		[Image],
+		[Sound],
+		[Synonim],
+		[Status]
+	)
+	SELECT 
+		[Id],
+		[Word],
+		[EnglishExplanation],
+		[RussianExplanation],
+		[Image],
+		[Sound],
+		[Synonim],
+		'unlearnt'
+	FROM [Word] as [w]
+	WHERE [Level] = @section AND [Sublevel] = @level AND [Id] NOT IN(select Id from @words)
 
-SELECT * FROM @userProgress;
+	SELECT * FROM @words;
 END

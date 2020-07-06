@@ -32,6 +32,7 @@
 		<Content Include="ClientApp\src\Components\TopicTasks\TopicTasks.js" />
 		<Content Include="ClientApp\src\Components\Variants\Variants.js" />
 		<Content Include="ClientApp\src\Components\Words\LevelsPage.js" />
+		<Content Include="ClientApp\src\Components\Words\Word.js" />
 		<Content Include="ClientApp\src\Components\Words\Words.js" />
 		<Content Include="ClientApp\src\data\topics.js" />
 		<Content Include="ClientApp\src\helpers\TaskType.js" />

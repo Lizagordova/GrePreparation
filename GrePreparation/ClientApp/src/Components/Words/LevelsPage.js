@@ -1,6 +1,7 @@
 ﻿import React, { Component }  from 'react';
 import {ProgressBar} from "react-step-progress-bar";
 import renderBreadcrumbs from '../../functions/breadcrumbsFunctions';
+import { Link } from 'react-router-dom';
 
 class LevelsPage extends Component {
     constructor(props) {
@@ -8,39 +9,32 @@ class LevelsPage extends Component {
         this.state = {
             loading: true,
             progress: [] //подумай как распарсить,тут придёт массив объектов
-            
         }
     }
     
     componentDidMount() {
-        {console.log('props in levels page', this.props)}
-        this.loadWordProgress(this.props.userId, this.props.section);
-    }
-
-    renderProgress() {
-        
+        this.loadWordProgress(localStorage.getItem('userId'), this.props.section);
     }
 
     renderLevels() {
-        console.log(this.state.progress,'progress in levels page');
         return(
             <div className="container">
                 {this.state.progress.map(progress => {
                     return(
-                            <div className="row justify-content-center">
-                                <div className="level">
-                                    <span>Level {progress.level}</span>
-                                
-                                <div className="progressBarDiv">
-                                <ProgressBar percent={progress.userFinishedTotal/progress.totalCount * 100}  filledBackground="linear-gradient(to right, #CD5C5C, #F08080)" unfilledBackground="linear-gradient(to right, #E6E6FA, #D8BFD8)"/>
-                                </div>
-                                </div>
-                            </div>
+                   <div className="row justify-content-center">
+                       <Link to={`/home/words/levels/${progress.level}`} className="level">
+                           <span>Level {progress.level}</span>
+                           <div className="progressBarDiv">
+                               <ProgressBar percent={progress.userFinishedTotal/progress.totalCount * 100}  filledBackground="linear-gradient(to right, #CD5C5C, #F08080)" unfilledBackground="linear-gradient(to right, #E6E6FA, #D8BFD8)"/>
+                           </div>
+                       </Link>
+                   </div>
                     );
                 })}
             </div>
         )
     }
+
     render() {
         let levels = this.state.loading
             ? <p><em>Loading...</em></p>
@@ -52,7 +46,7 @@ class LevelsPage extends Component {
             </div>
         );
     }
-    
+
     async loadWordProgress(userId, section) {
         const response = await fetch('progress', {
             method: 'POST',
@@ -62,9 +56,7 @@ class LevelsPage extends Component {
             },
             body: JSON.stringify({userId: userId, section: section, topic: ''})//здесь возможно можно так: userId,section,topic...
         });
-        console.log(response,'response in  levels page');
         const data = await response.json();
-        console.log(data,'data in  levels page');
         this.setState({progress: data, loading: false});
     }
 }

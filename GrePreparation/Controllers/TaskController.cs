@@ -43,19 +43,6 @@ namespace GrePreparation.Controllers
 				return "QuantitativeReasoning";
 			else return "VerbalReasoning";
 		}
-		[HttpPost]
-		[Route("/home/topictasks/qr/datainterpritation/task")]
-		[Route("topictasks/task/vr/discretequestions")]
-		public IEnumerable<VR_DiscreteQuestions> GetTasks_VR([FromBody]DataPost data)
-		{
-			var path = GetPath(data.Topic, data.TaskType, data.Level);
-			var streamReader = new StreamReader(path);
-			var json = streamReader.ReadToEnd();
-			var tasks = JsonConvert.DeserializeObject<List<VR_DiscreteQuestions>>(json);
-
-			streamReader.Close();
-			return tasks;
-		}
 
 		private string GetPath(string topic, string subtopic)
 		{

@@ -12,6 +12,7 @@ import Words from './Words/Words';
 import Menu from './Menu';
 import Task from './TopicTasks/Task';
 import LevelsPage from './Words/LevelsPage';
+import Word from './Words/Word';
 
 class Main extends Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class Main extends Component {
     closeMenu() {
         this.setState({ menuOpen: false })
     }
-    
+
     render() {
          return(
             <div className="cheeseburger">
@@ -51,7 +52,8 @@ class Main extends Component {
                     animationDuration={0.5}
                 />
                 <Switch>
-                    <Route exact path="/home/words/levels" component={() => <LevelsPage userId={"localhost"} section={"essential"} cleanTitle={"Levels"}/>}/>
+                    <Route exact path="/home/words/levels/:level" component={Word}/>
+                    <Route exact path="/home/words/levels" component={() => <LevelsPage section={"essential"} cleanTitle={"Levels"}/>}/>
                     <Route exact path="/home/words" component={() => <Words cleanTitle={"learnwords"}/>}/>
                     <Route exact path="/home/topictasks/:cleanTitle/:cleanTitle/:cleanTitle/task" component={Task}/>
                     <Route exact path="/home/topictasks/:cleanTitle/:cleanTitle/task" component={Task}/>
@@ -64,8 +66,7 @@ class Main extends Component {
                     <Route exact  path="/variants" component={Variants}/>
                     <Route exact path="/rating" component={Rating}/>
                     <Route exact path="/progress" component={Progress}/>
-                   
-                   <Redirect to="/home" />
+                    <Redirect to="/home" />
                 </Switch>
             </div>
         );

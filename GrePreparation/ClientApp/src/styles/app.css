@@ -30,6 +30,11 @@
     height: 50px;
 }
 
+.level:hover {
+    color: #DFD297;
+    text-decoration: none;
+}
+
 .progressBarDiv {
     padding-bottom: 2px;
 }
