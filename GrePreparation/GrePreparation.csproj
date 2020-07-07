@@ -42,8 +42,13 @@
 		<Content Include="ClientApp\src\styles\menu.css" />
 		<Content Include="ClientApp\src\styles\progress.css" />
 		<Content Include="ClientApp\src\styles\topicTasks.css" />
+		<Content Include="ClientApp\src\styles\words.css" />
 		<None Remove="$(SpaRoot)**" />
 		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+		<None Include="ClientApp\public\images\plummet.jpg" />
+		<None Include="ClientApp\public\images\recluse.jpg" />
+		<None Include="ClientApp\src\Components\images\plummet.jpg" />
+		<None Include="ClientApp\src\Components\images\recluse.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>

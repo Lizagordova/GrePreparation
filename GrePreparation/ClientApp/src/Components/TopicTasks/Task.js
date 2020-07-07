@@ -22,7 +22,6 @@ class Task extends Component {
     {
         this.setState({order: order});
         this.state.order = order;
-        
     }
 
     componentDidMount() {//может быть в другом месте жизненного цикла это делать?!?!

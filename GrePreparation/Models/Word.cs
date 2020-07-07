@@ -11,5 +11,6 @@
 		public string Synonim { get; set; }
 		public string Level { get; set; }
 		public string Sublevel { get; set; }
+		public string Status { get; set; }
 	}
 }

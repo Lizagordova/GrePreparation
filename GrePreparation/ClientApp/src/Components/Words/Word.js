@@ -1,24 +1,62 @@
 ﻿import React, { Component } from 'react';
+import '../../styles/words.css';
 
 class Word extends Component {
     constructor(props) {
         super(props);
         this.state = {
             loading: true,
-            words: []
+            words: [],
+            order: 0
         }
+    }
+
+    orderChange(order) {
+        this.setState({order: order});
     }
 
     componentDidMount() {
         let level = this.props.match.params.level;
-        this.loadWords(localStorage.getItem('userId', 'essential', level));
+        this.loadWords(localStorage.getItem('userId'), 'essential', level);
+    }
+
+     renderWord(word) {
+        console.log('word', word);
+         
+        // @ts-ignore
+         return(
+            <div className="container word-container" key={word.id}>
+                <img className="img-responsive" src="../../images/plummet.jpg" alt="all ne good"/>
+                <div className="row justify-content-center">
+                    <strong>{word.text}</strong>
+                </div>
+                <div className="row justify-content-center">
+                    <img className="img-responsive" src="../../images/plummet.jpg" alt="all ne good"/>
+                </div>
+                <div className="row justify-content-center">
+                    <audio src={word.sound}/>
+                </div>
+                <div className="row justify-content-center">
+                    <strong>{word.englishExplanation}</strong>
+                </div>
+            </div>
+        );
+    }
+
+    renderWords(words) {
+        console.log('render Words', words);
+        console.log('order', this.state.order);
+        return(
+            <>
+                {this.renderWord(words[this.state.order])}
+            </>
+        )
     }
 
     render() {
-        console.log('props in word', this.props);
         const words = this.state.loading
             ? <p><em>Loading...</em></p>
-            : this.renderWords();
+            : this.renderWords(this.state.words);
         return(
             //хлебные крошки добавь:3
             <div>
@@ -34,7 +72,7 @@ class Word extends Component {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({userId: userId, section: section, level: level})//здесь возможно можно так: userId,section,topic...
+            body: JSON.stringify({userId: userId, section: section, level: level})
         });
         const data = await response.json();
         this.setState({words: data, loading: false});
