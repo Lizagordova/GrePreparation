@@ -45,6 +45,7 @@
 		<Content Include="ClientApp\src\styles\words.css" />
 		<None Remove="$(SpaRoot)**" />
 		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+		<None Include="ClientApp\images\plummet.jpg" />
 		<None Include="ClientApp\public\images\plummet.jpg" />
 		<None Include="ClientApp\public\images\recluse.jpg" />
 		<None Include="ClientApp\src\Components\images\plummet.jpg" />

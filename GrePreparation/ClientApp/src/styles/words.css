@@ -2,7 +2,12 @@
     border-radius: 10px;
     border: #000000 2px solid;
     background-color: lightpink;
+    padding-right: 100px;
 }
-
-.word-image {
+.container .row {
+    margin: 0px auto;
+    max-width: 500px;
+}
+.wordImage {
+    max-height: 400px;
 }

@@ -21,17 +21,14 @@ class Word extends Component {
     }
 
      renderWord(word) {
-        console.log('word', word);
-         
-        // @ts-ignore
+        let wordImage = '../../.' + word.image;
          return(
-            <div className="container word-container" key={word.id}>
-                <img className="img-responsive" src="../../images/plummet.jpg" alt="all ne good"/>
-                <div className="row justify-content-center">
+            <div className="container" key={word.id}>
+                 <div className="row justify-content-center">
                     <strong>{word.text}</strong>
                 </div>
                 <div className="row justify-content-center">
-                    <img className="img-responsive" src="../../images/plummet.jpg" alt="all ne good"/>
+                    <img className="img-fluid rounded-circle wordImage" src={wordImage} alt="word Image"/>
                 </div>
                 <div className="row justify-content-center">
                     <audio src={word.sound}/>

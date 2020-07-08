@@ -42,7 +42,7 @@ namespace GrePreparation.Controllers
 					words.Add(word);
 				}
 			}
-			
+
 			DatabaseHelper.CloseConnection(connection);
 			return words;
 		}
