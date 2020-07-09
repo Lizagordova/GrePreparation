@@ -7,9 +7,15 @@
 }
 .breadcrumb {
     background-color: #AC2832;
+    text-decoration: none;
 }
 .breadcrumbLink {
     color: #DFD297;
+}
+
+.breadcrumbLink:hover {
+    color: #DFD297;
+    text-decoration: none;
 }
 
 .cheeseburger-menu-shadow {

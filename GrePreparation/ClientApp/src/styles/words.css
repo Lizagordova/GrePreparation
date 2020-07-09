@@ -3,6 +3,7 @@
     border: #000000 2px solid;
     background-color: lightpink;
     padding-right: 100px;
+    margin-bottom: 25px;
 }
 .container .row {
     margin: 0px auto;
@@ -10,4 +11,9 @@
 }
 .wordImage {
     max-height: 400px;
+}
+
+.buttons {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }

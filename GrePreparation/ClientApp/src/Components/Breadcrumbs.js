@@ -15,13 +15,17 @@ class Breadcrumbs extends Component {
         this.setState({ breadcrumbs : []})
     }
 
-    loadBreadcrumbs(topicId) {
-        let topic = TOPICS.find(topic => topic.id == topicId);
+    loadBreadcrumbs(props) {
+        let topic = TOPICS.find(topic => topic.id == props.id);
         let breadcrumbs = topic.breadcrumbs;
         for(let i = 0; i < breadcrumbs.length; i++)
         {
             let breadcrumb = TOPICS.find(item => 
             item.id === breadcrumbs[i]);
+            this.state.breadcrumbs.push(breadcrumb);
+        }
+        if(props.level !== undefined) {
+            let breadcrumb = {route: '#', title: 'Level ' + props.level, id: 27};
             this.state.breadcrumbs.push(breadcrumb);
         }
     }
@@ -48,7 +52,7 @@ class Breadcrumbs extends Component {
                 render() {
                 return (
                 <div>
-                    {this.loadBreadcrumbs(this.props.id)}
+                    {this.loadBreadcrumbs(this.props)}
                     {this.renderBreadcrumbs()}
                 </div>
                 );

@@ -38,7 +38,6 @@ class TopicTasks extends Component {
     render() {
         return(
             <div>
-                {console.log('this PROPS', this.props)}
                 {renderBreadcrumbs(this.props)}
                 {this.renderTopics(this.props)}
             </div>

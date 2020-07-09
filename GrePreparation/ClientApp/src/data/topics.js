@@ -24,7 +24,7 @@
     {id:22, title:'Rates and Work', cleanTitle:'RatesAndWork', subtopics:[], breadcrumbs: [0, 1, 7, 9, 22]},
     {id:23, title:"Standard Deviation And Normal Distribution", cleanTitle:'standarddeviationandnormaldistribution', route:`/home/topictasks/quantitativereasoning/statistics/standarddeviationandnormaldistribution`, subtopics:[], breadcrumbs:[0, 1, 7, 11, 23]},
     {id:24, title:"Discrete Questions", cleanTitle:'DiscreteQuestions', subtopics:[], breadcrumbs: [0, 1, 8, 24]},
-    {id:25, title: "Levels", cleanTitle:'levels', subtopics:[], breadcrumbs:[0,6,25]}
+    {id:25, title: "Levels", cleanTitle:'levels', route: '/home/words/levels', subtopics:[], breadcrumbs:[0,6,25]}
 ];
 
 export default TOPICS;
