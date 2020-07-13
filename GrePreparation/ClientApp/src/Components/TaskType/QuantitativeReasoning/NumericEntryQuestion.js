@@ -4,17 +4,12 @@ class NumericEntryQuestion extends Component {
     constructor(props) {
         super(props);
         this.value = '';
-       /*this.state = {
-            value: '',
-            order:0
-        };*/
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
         this.value = event.target.value;
-       // this.setState({value: event.target.value})
     }
 
     handleSubmit(event) {

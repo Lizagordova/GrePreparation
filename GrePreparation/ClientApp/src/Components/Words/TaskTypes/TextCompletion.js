@@ -4,11 +4,8 @@ import { Button } from 'reactstrap';
 class TextCompletion extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            task: '',
-            answers: '',
-            word: ''
-        };
+        this.word = '';
+        this.words = [];
         this.check = this.check.bind(this);
     }
     
@@ -17,23 +14,27 @@ class TextCompletion extends Component {
     }
 
     check(event) {
-        if(event.target.value !== word) {
-            return(alert('IT IS NOT RIGHT'))
+        event.preventDefault();
+        if(event.target.value === this.word) {
+            return(alert('IT IS RIGHT'))
         } else {
-            return(alert('ALL GOOD, YOU KNOW THIS WORD'))
+            return(alert('NE GOOD, YOU DO NOT KNOW THIS WORD'))
         }
     }
 
-    renderTask(word) {
+    renderTask() {
+        let word = this.word;
+        let words = this.words;
+        console.log('text Completion word and words:', word, words);
         let image = '../../../.' + word.image;
         return(
             <div className="container">
                 <div className="row justify-content-center">
                     <img src={image} alt="task on test completion" />
                 </div>
-                {this.state.answers.map(answer => 
+                {words.map(word => 
                     <div className="row justify-content-center">
-                        <span>{answer}</span>
+                        <span>{word}</span>
                     </div>)}
                     <div className="row">
                         <Button color="success" onClick={this.check}>ПРОВЕРИТЬ</Button>
@@ -43,9 +44,11 @@ class TextCompletion extends Component {
     }
 
     render() {
+        this.word = this.props.word;
+        this.words = this.props.words;
         return(
             <>
-                {this.renderTask(this.state.word)}
+                {this.renderTask()}
             </>);
     }
 }

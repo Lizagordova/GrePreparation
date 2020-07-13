@@ -46,12 +46,6 @@ class Task extends Component {
         }*/
     }
      renderTasks(tasks) {
-         console.log('from localStorage',localStorage.getItem('completedTasks'))
-        if(!localStorage.getItem('completedTasks'))
-            localStorage.setItem('completedTasks', 'i am here')
-         else console.log(localStorage.getItem('completedTasks'))
-         console.log(localStorage, 'updated Local Storage')
-         console.log('from localStorage',localStorage.getItem('completedTasks'))
         return (
             <div className="container">
                 {this.renderTask(tasks[this.state.order])}

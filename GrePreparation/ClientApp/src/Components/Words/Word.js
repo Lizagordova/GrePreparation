@@ -2,6 +2,8 @@
 import '../../styles/words.css';
 import renderBreadcrumbs from "../../functions/breadcrumbsFunctions";
 import { Button } from 'reactstrap';
+import TextCompletion from "./TaskTypes/TextCompletion";
+import JustWord from "./TaskTypes/JustWord";
 
 class Word extends Component {
     constructor(props) {
@@ -9,7 +11,8 @@ class Word extends Component {
         this.state = {
             loading: true,
             words: [],
-            order: 0
+            order: 0,
+            taskType: 1
         };
         this.alreadyKnow = this.alreadyKnow.bind(this);
         this.next = this.next.bind(this);
@@ -33,45 +36,24 @@ class Word extends Component {
         } else {
             this.orderChange(0);
         }
+        if(this.state.taskType < 9) {
+            this.setState({taskType: this.state.taskType + 1});
+        } else {
+            this.setState({taskType: 1});
+        }
     }
 
     componentDidMount() {
         let level = this.props.match.params.level;
         this.loadWords(localStorage.getItem('userId'), 'essential', level);
     }
-
-     renderWord(word) {
-        let wordImage = '../../.' + word.image;
-         return(
-            <div className="container" key={word.id}>
-                 <div className="row justify-content-center">
-                    <strong>{word.text.toUpperCase()}</strong>
-                </div>
-                <div className="row justify-content-center">
-                    <img className="img-fluid rounded-circle wordImage" src={wordImage} alt="word Image"/>
-                </div>
-                <div className="row justify-content-center">
-                    <audio src={word.sound}/>
-                </div>
-                <div className="row justify-content-center">
-                    <strong>{word.englishExplanation}</strong>
-                </div>
-                <div className="row buttons justify-content-center">
-                    <div className="col-6">
-                        <Button color="danger" onClick={this.alreadyKnow}>Уже знаю</Button>
-                    </div>
-                    <div className="col-6">
-                        <Button color="success" onClick={this.next}>Дальше</Button>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+    
 
     renderWords(words) {
         return(
             <>
-                {this.renderWord(words[this.state.order])}
+                {console.log(this.state.taskType, 'taskType')}
+                {this.taskSwitcher(this.state.taskType, this.state.order)}
             </>
         )
     }
@@ -84,7 +66,7 @@ class Word extends Component {
         return(
             <div>
                 {renderBreadcrumbs(breadcrumbsProps)}
-               {words}
+                {words}
             </div>
         );
     }
@@ -100,6 +82,30 @@ class Word extends Component {
         });
         const data = await response.json();
         this.setState({words: data, loading: false});
+    }
+
+    taskSwitcher(taskType, wordOrder) {
+        if(taskType === 2) {
+            let words = [];
+            for(let i=0;i<4;i++){
+                words.push(this.state.words[this.getRandomInt(0, 3)]);
+            }
+            return (
+                <>
+                    <TextCompletion word={this.state.words[wordOrder]} words={words}/>
+                </>
+            );
+        } else if(taskType === 1) {
+            return (
+                <>
+                    <JustWord word={this.state.words[wordOrder]} onNext={this.next} onAlreadyKnow={this.alreadyKnow}/>
+                </>
+            );
+        }
+    }
+
+    getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
     }
 }
 
