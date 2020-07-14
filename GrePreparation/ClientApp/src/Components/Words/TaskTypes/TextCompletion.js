@@ -33,7 +33,7 @@ class TextCompletion extends Component {
                     <img src={image} alt="task on test completion" />
                 </div>
                 {words.map(word => 
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-center" key={word.id}>
                         <span>{word}</span>
                     </div>)}
                     <div className="row">

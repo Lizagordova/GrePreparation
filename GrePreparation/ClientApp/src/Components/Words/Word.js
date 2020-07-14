@@ -4,6 +4,7 @@ import renderBreadcrumbs from "../../functions/breadcrumbsFunctions";
 import { Button } from 'reactstrap';
 import TextCompletion from "./TaskTypes/TextCompletion";
 import JustWord from "./TaskTypes/JustWord";
+import ChooseMeaning from "./TaskTypes/ChooseMeaning";
 
 class Word extends Component {
     constructor(props) {
@@ -36,24 +37,27 @@ class Word extends Component {
         } else {
             this.orderChange(0);
         }
-        if(this.state.taskType < 9) {
-            this.setState({taskType: this.state.taskType + 1});
-        } else {
-            this.setState({taskType: 1});
-        }
+        let taskType = this.getRandomInt(1, 3);
+        this.setState({taskType: taskType});
+    }
+
+    rightAnswer(taskType) {
+        let order = this.state.order;
+        console.log('right answer uraaaa');
+        //this.state.words[order].attempts[taskType]++;
+        this.next();
     }
 
     componentDidMount() {
         let level = this.props.match.params.level;
         this.loadWords(localStorage.getItem('userId'), 'essential', level);
     }
-    
 
     renderWords(words) {
         return(
             <>
                 {console.log(this.state.taskType, 'taskType')}
-                {this.taskSwitcher(this.state.taskType, this.state.order)}
+                {this.taskSwitcher(/*this.state.taskType*/3, this.state.order)}
             </>
         )
     }
@@ -85,7 +89,13 @@ class Word extends Component {
     }
 
     taskSwitcher(taskType, wordOrder) {
-        if(taskType === 2) {
+        if(taskType === 1) {
+            return (
+                <>
+                    <JustWord word={this.state.words[wordOrder]} onNext={this.next} onAlreadyKnow={this.alreadyKnow}/>
+                </>
+            );
+        } else if(taskType === 2) {
             let words = [];
             for(let i=0;i<4;i++){
                 words.push(this.state.words[this.getRandomInt(0, 3)]);
@@ -95,12 +105,17 @@ class Word extends Component {
                     <TextCompletion word={this.state.words[wordOrder]} words={words}/>
                 </>
             );
-        } else if(taskType === 1) {
-            return (
+        } else if(taskType === 3) {
+            let words = [];
+            for(let i=0;i<4;i++){
+                words.push(this.state.words[this.getRandomInt(0, 3)]);
+            }
+            console.log('random words', words);
+            return(
                 <>
-                    <JustWord word={this.state.words[wordOrder]} onNext={this.next} onAlreadyKnow={this.alreadyKnow}/>
+                    <ChooseMeaning word={this.state.words[wordOrder]} words={words} onRightAnswer={this.rightAnswer}/>
                 </>
-            );
+            )
         }
     }
 
