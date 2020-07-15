@@ -1,7 +1,6 @@
 ﻿import React, { Component } from 'react';
 import '../../styles/words.css';
 import renderBreadcrumbs from "../../functions/breadcrumbsFunctions";
-import { Button } from 'reactstrap';
 import TextCompletion from "./TaskTypes/TextCompletion";
 import JustWord from "./TaskTypes/JustWord";
 import ChooseMeaning from "./TaskTypes/ChooseMeaning";
@@ -17,6 +16,8 @@ class Word extends Component {
         };
         this.alreadyKnow = this.alreadyKnow.bind(this);
         this.next = this.next.bind(this);
+        this.orderChange = this.orderChange.bind(this);
+        this.rightAnswer = this.rightAnswer.bind(this);
     }
 
     orderChange(order) {
@@ -38,12 +39,11 @@ class Word extends Component {
             this.orderChange(0);
         }
         let taskType = this.getRandomInt(1, 3);
-        this.setState({taskType: taskType});
+        this.setState({taskType: 3});
     }
 
     rightAnswer(taskType) {
         let order = this.state.order;
-        console.log('right answer uraaaa');
         //this.state.words[order].attempts[taskType]++;
         this.next();
     }
@@ -56,10 +56,9 @@ class Word extends Component {
     renderWords(words) {
         return(
             <>
-                {console.log(this.state.taskType, 'taskType')}
-                {this.taskSwitcher(/*this.state.taskType*/3, this.state.order)}
+                {this.taskSwitcher(this.state.taskType, this.state.order)}
             </>
-        )
+        );
     }
 
     render() {
@@ -73,19 +72,6 @@ class Word extends Component {
                 {words}
             </div>
         );
-    }
-
-    async loadWords(userId, section, level) {
-        const response = await fetch('loadwords', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({userId: userId, section: section, level: level})
-        });
-        const data = await response.json();
-        this.setState({words: data, loading: false});
     }
 
     taskSwitcher(taskType, wordOrder) {
@@ -108,9 +94,8 @@ class Word extends Component {
         } else if(taskType === 3) {
             let words = [];
             for(let i=0;i<4;i++){
-                words.push(this.state.words[this.getRandomInt(0, 3)]);
+                words.push(this.state.words[this.getRandomInt(0, 8)]);
             }
-            console.log('random words', words);
             return(
                 <>
                     <ChooseMeaning word={this.state.words[wordOrder]} words={words} onRightAnswer={this.rightAnswer}/>
@@ -121,6 +106,19 @@ class Word extends Component {
 
     getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    async loadWords(userId, section, level) {
+        const response = await fetch('loadwords', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({userId: userId, section: section, level: level})
+        });
+        const data = await response.json();
+        this.setState({words: data, loading: false});
     }
 }
 

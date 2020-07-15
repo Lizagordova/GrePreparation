@@ -6,6 +6,7 @@ class ChooseMeaning extends Component {
         super(props);
         this.word = '';
         this.rightAnswer = this.rightAnswer.bind(this);
+        this.check = this.check.bind(this);
     }
 
     rightAnswer() {
@@ -14,8 +15,7 @@ class ChooseMeaning extends Component {
 
     check(event) {
         event.preventDefault();
-        console.log(event);
-        if(event.target.value === this.word) {
+       if(event.currentTarget.id == this.word.id) {
             this.rightAnswer();
         } else {
             alert('NI HUYA');
@@ -35,7 +35,7 @@ class ChooseMeaning extends Component {
                     {words.map(word =>
                     <div className="row buttons justify-content-center" key={word.id}>
                         <div className="col-6">
-                            <Button outline color="danger" onClick={this.check} key={word.id}>{word.text}</Button>
+                            <Button outline color="danger" onClick={this.check} id={word.id}>{word.text}</Button>
                         </div>
                     </div>)}
                 </div>
