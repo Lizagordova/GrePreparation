@@ -33,11 +33,7 @@ class Word extends Component {
     }
 
     next() {
-        if(this.state.order < this.state.words.length - 1) {
-            this.orderChange(this.state.order + 1);
-        } else {
-            this.orderChange(0);
-        }
+        this.orderChange(this.getRandomInt(0,this.state.words.length - 1));
         let taskType = this.getRandomInt(1, 3);
         this.setState({taskType: 3});
     }
@@ -92,9 +88,10 @@ class Word extends Component {
                 </>
             );
         } else if(taskType === 3) {
-            let words = [];
-            for(let i=0;i<4;i++){
-                words.push(this.state.words[this.getRandomInt(0, 8)]);
+            let words = new Set();
+            while(words.size !== 4)
+            {
+                words.add(this.state.words[this.getRandomInt(0, 8)]);
             }
             return(
                 <>

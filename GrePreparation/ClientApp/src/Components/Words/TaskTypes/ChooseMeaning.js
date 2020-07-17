@@ -25,7 +25,7 @@ class ChooseMeaning extends Component {
     render() {
         this.word = this.props.word;
         let words = this.props.words;
-        words.push(this.word);
+        words.add(this.word);
         return(<div>
             <>
                 <div className="container">
