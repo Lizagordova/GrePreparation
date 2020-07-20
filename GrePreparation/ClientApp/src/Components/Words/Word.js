@@ -105,16 +105,19 @@ class Word extends Component {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    async loadWords(userId, section, level) {
+    async loadWords(userId, level, sublevel) {
         const response = await fetch('loadwords', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({userId: userId, section: section, level: level})
+            body: JSON.stringify({userId: userId, level: level, sublevel: sublevel})
         });
+        console.log('response', response);
         const data = await response.json();
+        console.log('data', data);
+        console.log('attempts', data.attempts);
         this.setState({words: data, loading: false});
     }
 }
