@@ -9,6 +9,7 @@ using GrePreparation.Models;
 using GrePreparation.Models.QueryPost;
 using GrePreparation.Models.UDT;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace GrePreparation.Controllers
 {
@@ -51,7 +52,7 @@ namespace GrePreparation.Controllers
 
 		[HttpPost]
 		[Route("/home/words/levels/loadwords")]
-		public List<Word> GetWordsForUserByUserLevel([FromBody]WordQuery query)
+		public JsonResult GetWordsForUserByUserLevel([FromBody]WordQuery query)
 		{
 			var connection = DatabaseHelper.OpenConnection();
 			var param = GetParam();
@@ -61,7 +62,8 @@ namespace GrePreparation.Controllers
 			var words = GetListWords(wordsUdts, attemptsUdts);
 			
 			DatabaseHelper.CloseConnection(connection);
-			return words;
+			var serializedWords = JsonConvert.SerializeObject(words);
+			return new JsonResult(serializedWords);
 		}
 
 		private DynamicParameters GetParam()//это тоже параметризировать!!!

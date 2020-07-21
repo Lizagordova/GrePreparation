@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [WordRepository_GetWordsForUserByLevel]
+﻿CREATE PROCEDURE [dbo].[WordRepository_GetWordsForUserByLevel]
 	@userId NVARCHAR(100),
 	@level NVARCHAR(20),
 	@sublevel INT
@@ -9,6 +9,9 @@ BEGIN
 		);
 	INSERT
 	INTO @wordIds
+	SELECT Id FROM Word
+	WHERE [Level] = @level AND [Sublevel] = @sublevel
+	UNION 
 	SELECT Id FROM Word
 	WHERE [Level] = @level AND [Sublevel] = @sublevel
 	AND [Id] IN (
@@ -29,9 +32,6 @@ BEGIN
 
 	SELECT * FROM Word
 	WHERE [Level] = @level AND [Sublevel] = @sublevel
-	AND [Id] IN (
-		SELECT [WordId] FROM [User_Word]
-		WHERE [UserId] = @userId AND [Status] != 'learnt'
-	);
+	AND [Id] IN (SELECT [Id] FROM @wordIds);
 	SELECT * FROM @attempts;
 END

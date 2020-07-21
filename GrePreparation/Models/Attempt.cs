@@ -1,4 +1,8 @@
-﻿namespace GrePreparation.Models
+﻿using System;
+using Newtonsoft.Json;
+
+
+namespace GrePreparation.Models
 {
 	public class Attempt
 	{

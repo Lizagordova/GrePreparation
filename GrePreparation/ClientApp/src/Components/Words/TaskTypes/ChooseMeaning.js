@@ -15,7 +15,7 @@ class ChooseMeaning extends Component {
 
     check(event) {
         event.preventDefault();
-       if(event.currentTarget.id == this.word.id) {
+       if(event.currentTarget.id == this.word.Id) {
             this.rightAnswer();
         } else {
             alert('NI HUYA');
@@ -30,12 +30,12 @@ class ChooseMeaning extends Component {
             <>
                 <div className="container">
                     <div className="row justify-content-center">
-                        <strong>{this.word.englishExplanation.toUpperCase()}</strong>
+                        <strong>{this.word.EnglishExplanation.toUpperCase()}</strong>
                     </div>
                     {words.map(word =>
-                    <div className="row buttons justify-content-center" key={word.id}>
+                    <div className="row buttons justify-content-center" key={word.Id}>
                         <div className="col-6">
-                            <Button outline color="danger" onClick={this.check} id={word.id}>{word.text}</Button>
+                            <Button outline color="danger" onClick={this.check} id={word.Id}>{word.Text}</Button>
                         </div>
                     </div>)}
                 </div>

@@ -9,6 +9,7 @@ class JustWord extends Component {
     }
 
     next() {
+        console.log('next in just word');
         this.props.onNext();
     }
 
@@ -17,21 +18,22 @@ class JustWord extends Component {
     }
 
     renderWord(word) {
-        let wordImage = '../../.' + word.image;
+        let wordImage = '../../.' + word.Image;
+        console.log('word in JustWord', word);
         return(
-          <> 
-              <div className="container" key={word.id}>
+          <>
+              <div className="container" key={word.Id}>
               <div className="row justify-content-center">
-                  <strong>{word.text.toUpperCase()}</strong>
+                  <strong>{word.Text.toUpperCase()}</strong>
               </div>
               <div className="row justify-content-center">
                   <img className="img-fluid rounded-circle wordImage" src={wordImage} alt="word Image"/>
               </div>
               <div className="row justify-content-center">
-                  <audio src={word.sound}/>
+                  <audio src={word.Sound}/>
               </div>
               <div className="row justify-content-center">
-                  <strong>{word.englishExplanation}</strong>
+                  <strong>{word.EnglishExplanation}</strong>
               </div>
               <div className="row buttons justify-content-center">
                   <div className="col-6">

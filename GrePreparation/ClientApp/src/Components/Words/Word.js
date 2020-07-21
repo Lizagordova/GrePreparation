@@ -79,7 +79,7 @@ class Word extends Component {
             );
         } else if(taskType === 2) {
             let words = [];
-            for(let i=0;i<4;i++){
+            for(let i = 0;i < 4;i++){
                 words.push(this.state.words[this.getRandomInt(0, 3)]);
             }
             return (
@@ -114,11 +114,9 @@ class Word extends Component {
             },
             body: JSON.stringify({userId: userId, level: level, sublevel: sublevel})
         });
-        console.log('response', response);
         const data = await response.json();
-        console.log('data', data);
-        console.log('attempts', data.attempts);
-        this.setState({words: data, loading: false});
+        const parsed = await JSON.parse(data);
+        this.setState({words: parsed, loading: false});
     }
 }
 

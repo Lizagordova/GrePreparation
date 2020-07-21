@@ -26,14 +26,14 @@ class TextCompletion extends Component {
         let word = this.word;
         let words = this.words;
         console.log('text Completion word and words:', word, words);
-        let image = '../../../.' + word.image;
+        let image = '../../../.' + word.Image;
         return(
             <div className="container">
                 <div className="row justify-content-center">
                     <img src={image} alt="task on test completion" />
                 </div>
                 {words.map(word => 
-                    <div className="row justify-content-center" key={word.id}>
+                    <div className="row justify-content-center" key={word.Id}>
                         <span>{word}</span>
                     </div>)}
                     <div className="row">
