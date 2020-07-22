@@ -6,16 +6,22 @@ class TextCompletion extends Component {
         super(props);
         this.word = '';
         this.words = [];
+        this.chosenWord = 0;
         this.check = this.check.bind(this);
+        this.chose = this.chose.bind(this);
     }
     
     componentDidMount() {
         this.setState({task: this.props.task, answers: this.props.answers, rightAnswer: this.props.word})
     }
 
+    chose(event) {
+        this.chosenWord = event.currentTarget.id;
+    }
+
     check(event) {
         event.preventDefault();
-        if(event.target.value === this.word) {
+        if(this.chosenWord == this.word.Id) {
             return(alert('IT IS RIGHT'))
         } else {
             return(alert('NE GOOD, YOU DO NOT KNOW THIS WORD'))
@@ -25,7 +31,7 @@ class TextCompletion extends Component {
     renderTask() {
         let word = this.word;
         let words = this.words;
-        console.log('text Completion word and words:', word, words);
+        words.add(this.word);
         let image = '../../../.' + word.Image;
         return(
             <div className="container">
@@ -34,7 +40,7 @@ class TextCompletion extends Component {
                 </div>
                 {words.map(word => 
                     <div className="row justify-content-center" key={word.Id}>
-                        <span>{word}</span>
+                       <Button collor="warning" outline onClick={this.chose} id={word.Id}><span>{word.Text}</span></Button>
                     </div>)}
                     <div className="row">
                         <Button color="success" onClick={this.check}>ПРОВЕРИТЬ</Button>
@@ -50,6 +56,11 @@ class TextCompletion extends Component {
             <>
                 {this.renderTask()}
             </>);
+    }
+    
+    async loadTasks()
+    {
+        
     }
 }
 

@@ -9,7 +9,6 @@ class JustWord extends Component {
     }
 
     next() {
-        console.log('next in just word');
         this.props.onNext();
     }
 
@@ -19,7 +18,6 @@ class JustWord extends Component {
 
     renderWord(word) {
         let wordImage = '../../.' + word.Image;
-        console.log('word in JustWord', word);
         return(
           <>
               <div className="container" key={word.Id}>

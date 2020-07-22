@@ -33,7 +33,7 @@ class ChooseMeaning extends Component {
                         <strong>{this.word.EnglishExplanation.toUpperCase()}</strong>
                     </div>
                     {words.map(word =>
-                    <div className="row buttons justify-content-center" key={word.Id}>
+                    <div className="row buttons justify-content-center">
                         <div className="col-6">
                             <Button outline color="danger" onClick={this.check} id={word.Id}>{word.Text}</Button>
                         </div>

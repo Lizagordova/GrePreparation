@@ -18,12 +18,23 @@ class Word extends Component {
         this.next = this.next.bind(this);
         this.orderChange = this.orderChange.bind(this);
         this.rightAnswer = this.rightAnswer.bind(this);
+        this.increaseCountOfAttempts = this.increaseCountOfAttempts.bind(this);
     }
 
     orderChange(order) {
         this.setState({ order: order });
     }
 
+    increaseCountOfAttempts() {
+        if(this.state.words[this.state.order].Attempts.length === 9) {
+            this.state.words[this.state.order].Attempts.find(attempt => attempt.TaskType === this.state.taskType).CountOfAttempts++;
+            console.log(this.state.words[this.state.order].Attempts);
+        } 
+        else {
+            console.log('order', this.state.order);
+            console.log('task Type', this.state.taskType);
+        }
+    }
     alreadyKnow() {
         this.orderChange(this.state.order + 1);
         //+запомнить чтоб дальше не высвечивалось это слово
@@ -33,9 +44,10 @@ class Word extends Component {
     }
 
     next() {
-        this.orderChange(this.getRandomInt(0,this.state.words.length - 1));
+        this.increaseCountOfAttempts();
+        this.orderChange(this.getRandomInt(0, this.state.words.length - 1));
         let taskType = this.getRandomInt(1, 3);
-        this.setState({taskType: 3});
+        this.setState({taskType: taskType});
     }
 
     rightAnswer(taskType) {
@@ -78,9 +90,10 @@ class Word extends Component {
                 </>
             );
         } else if(taskType === 2) {
-            let words = [];
-            for(let i = 0;i < 4;i++){
-                words.push(this.state.words[this.getRandomInt(0, 3)]);
+            let words = new Set();
+            while(words.size !== 4)
+            {
+                words.add(this.state.words[this.getRandomInt(0, this.state.words.length - 1)]);
             }
             return (
                 <>
@@ -91,7 +104,7 @@ class Word extends Component {
             let words = new Set();
             while(words.size !== 4)
             {
-                words.add(this.state.words[this.getRandomInt(0, 8)]);
+                words.add(this.state.words[this.getRandomInt(0, this.state.words.length - 1)]);
             }
             return(
                 <>
@@ -116,6 +129,7 @@ class Word extends Component {
         });
         const data = await response.json();
         const parsed = await JSON.parse(data);
+        console.log(parsed, 'parsed');
         this.setState({words: parsed, loading: false});
     }
 }
