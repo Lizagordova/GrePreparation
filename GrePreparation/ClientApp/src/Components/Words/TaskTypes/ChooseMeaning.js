@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Button } from 'reactstrap';
+import WordTaskType from "../../../enums/WordTaskType";
 
 class ChooseMeaning extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class ChooseMeaning extends Component {
     }
 
     rightAnswer() {
-        this.props.onRightAnswer(3);//здесь должен быть какой-нибудь енам
+        this.props.onRightAnswer(WordTaskType.ChooseMeaning);
     }
 
     check(event) {

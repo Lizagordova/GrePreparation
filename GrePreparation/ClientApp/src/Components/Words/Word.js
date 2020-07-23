@@ -28,13 +28,24 @@ class Word extends Component {
     increaseCountOfAttempts() {
         if(this.state.words[this.state.order].Attempts.length === 9) {
             this.state.words[this.state.order].Attempts.find(attempt => attempt.TaskType === this.state.taskType).CountOfAttempts++;
-            console.log(this.state.words[this.state.order].Attempts);
         } 
         else {
-            console.log('order', this.state.order);
-            console.log('task Type', this.state.taskType);
+            let wordId = this.state.words[this.state.order].Id;
+            for(let i=0;i<9;i++)
+            {
+                let obj = {
+                    WordId: wordId,
+                    TaskType: i+1,
+                    CountOfAttempts: 0
+                };
+                if(obj.TaskType === this.state.taskType) {
+                    obj.CountOfAttempts = 1;
+                }
+                this.state.words[this.state.order].Attempts.push(obj);
+            }
         }
     }
+
     alreadyKnow() {
         this.orderChange(this.state.order + 1);
         //+запомнить чтоб дальше не высвечивалось это слово
@@ -46,17 +57,29 @@ class Word extends Component {
     next() {
         this.increaseCountOfAttempts();
         this.orderChange(this.getRandomInt(0, this.state.words.length - 1));
-        let taskType = this.getRandomInt(1, 3);
-        this.setState({taskType: taskType});
+        let finished = true;
+        while(finished) {
+            let taskType = this.getRandomInt(1, 3);
+            if (this.state.words[this.state.order].Attempts[taskType].CountOfAttempts === 4) {
+                taskType = this.getRandomInt(1, 3);
+            } else {
+                finished = false;
+                this.setState({taskType: taskType});
+            }
+        }
+        console.log(this.state.words)
     }
 
     rightAnswer(taskType) {
-        let order = this.state.order;
-        //this.state.words[order].attempts[taskType]++;
         this.next();
     }
 
     componentDidMount() {
+        window.addEventListener("beforeunload", (event) => {
+            event.preventDefault();            
+            event.returnValue = 'Are you sure that you want go out?(';
+            return 'Are you sure that you want go out?(';
+        });
         let level = this.props.match.params.level;
         this.loadWords(localStorage.getItem('userId'), 'essential', level);
     }
@@ -97,7 +120,7 @@ class Word extends Component {
             }
             return (
                 <>
-                    <TextCompletion word={this.state.words[wordOrder]} words={words}/>
+                    <TextCompletion word={this.state.words[wordOrder]} words={words} onRightAnswer={this.rightAnswer}/>
                 </>
             );
         } else if(taskType === 3) {
@@ -131,6 +154,10 @@ class Word extends Component {
         const parsed = await JSON.parse(data);
         console.log(parsed, 'parsed');
         this.setState({words: parsed, loading: false});
+    }
+    
+    async updateDatabase() {
+        const response = await fetch();
     }
 }
 

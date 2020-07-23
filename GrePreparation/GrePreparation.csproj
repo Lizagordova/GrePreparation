@@ -41,6 +41,7 @@
 		<Content Include="ClientApp\src\Components\Words\Word.js" />
 		<Content Include="ClientApp\src\Components\Words\Words.js" />
 		<Content Include="ClientApp\src\data\topics.js" />
+		<Content Include="ClientApp\src\enums\WordTaskType.js" />
 		<Content Include="ClientApp\src\helpers\TaskType.js" />
 		<Content Include="ClientApp\src\functions\breadcrumbsFunctions.js" />
 		<Content Include="ClientApp\src\pages\LevelsPage.js" />
@@ -59,6 +60,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="ClientApp\src\Components\Words\functions" />
 	  <Folder Include="Services" />
 	</ItemGroup>
 
