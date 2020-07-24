@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Permissions;
 using Dapper;
 using GrePreparation.Helpers;
 using GrePreparation.Models;
@@ -10,6 +11,7 @@ using GrePreparation.Models.QueryPost;
 using GrePreparation.Models.UDT;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+
 
 namespace GrePreparation.Controllers
 {
@@ -64,6 +66,19 @@ namespace GrePreparation.Controllers
 			DatabaseHelper.CloseConnection(connection);
 			var serializedWords = JsonConvert.SerializeObject(words);
 			return new JsonResult(serializedWords);
+		}
+
+		[HttpPost]
+		[Route("/home/words/levels/updatedatabase")]
+		public void UpdateDatabase([FromBody]dynamic wordsQuery)
+		{
+			var conn = DatabaseHelper.OpenConnection();
+			var json = wordsQuery.ToString();
+			var deserialized = JsonConvert.DeserializeObject<WordsQuery>(json);
+			foreach (var word in wordsQuery.Words)
+			{
+			}
+			DatabaseHelper.CloseConnection(conn);
 		}
 
 		private DynamicParameters GetParam()//это тоже параметризировать!!!

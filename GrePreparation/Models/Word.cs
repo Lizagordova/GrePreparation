@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace GrePreparation.Models
 {
+	[Serializable]
 	public class Word
 	{
 		public int Id { get; set; }

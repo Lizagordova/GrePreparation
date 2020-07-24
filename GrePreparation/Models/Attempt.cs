@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace GrePreparation.Models
 {
+	[Serializable]
 	public class Attempt
 	{
 		public int WordId { get; set; }

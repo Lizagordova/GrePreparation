@@ -27,6 +27,8 @@ class Word extends Component {
 
     increaseCountOfAttempts() {
         if(this.state.words[this.state.order].Attempts.length === 9) {
+            console.log(this.state.order, 'order');
+            console.log(this.state.words[this.state.order], 'word');
             this.state.words[this.state.order].Attempts.find(attempt => attempt.TaskType === this.state.taskType).CountOfAttempts++;
         } 
         else {
@@ -76,7 +78,8 @@ class Word extends Component {
 
     componentDidMount() {
         window.addEventListener("beforeunload", (event) => {
-            event.preventDefault();            
+            event.preventDefault();        
+            this.sendDataToServer();
             event.returnValue = 'Are you sure that you want go out?(';
             return 'Are you sure that you want go out?(';
         });
@@ -156,8 +159,16 @@ class Word extends Component {
         this.setState({words: parsed, loading: false});
     }
     
-    async updateDatabase() {
-        const response = await fetch();
+     sendDataToServer() {
+        console.log('i will send data');
+        const response = fetch('updatedatabase', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({words: this.state.words})
+        });
     }
 }
 
