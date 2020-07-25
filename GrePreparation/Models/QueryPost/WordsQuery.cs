@@ -8,5 +8,6 @@ namespace GrePreparation.Models.QueryPost
 	public class WordsQuery
 	{
 		public List<Word> Words { get; set; }
+		public string UserId { get; set; }
 	}
 }

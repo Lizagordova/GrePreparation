@@ -5,11 +5,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Permissions;
 using Dapper;
+using GrePreparation.Extensions;
 using GrePreparation.Helpers;
 using GrePreparation.Models;
 using GrePreparation.Models.QueryPost;
 using GrePreparation.Models.UDT;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.SqlServer.Server;
 using Newtonsoft.Json;
 
 
@@ -57,7 +59,7 @@ namespace GrePreparation.Controllers
 		public JsonResult GetWordsForUserByUserLevel([FromBody]WordQuery query)
 		{
 			var connection = DatabaseHelper.OpenConnection();
-			var param = GetParam();
+			var param = GetParam(query.UserId, query.Level, int.Parse(query.Sublevel));
 			var data = connection.QueryMultiple("WordRepository_GetWordsForUserByLevel", param, commandType: CommandType.StoredProcedure);
 			var wordsUdts = data.Read<WordUdt>().ToList();
 			var attemptsUdts = data.Read<AttemptUdt>().ToList();
@@ -72,21 +74,41 @@ namespace GrePreparation.Controllers
 		[Route("/home/words/levels/updatedatabase")]
 		public void UpdateDatabase([FromBody]dynamic wordsQuery)
 		{
-			var conn = DatabaseHelper.OpenConnection();
+			var connection = DatabaseHelper.OpenConnection();
 			var json = wordsQuery.ToString();
-			var deserialized = JsonConvert.DeserializeObject<WordsQuery>(json);
-			foreach (var word in wordsQuery.Words)
+			WordsQuery deserialized = JsonConvert.DeserializeObject<WordsQuery>(json);
+			var command = new SqlCommand("WordRepository_AddOrUpdateUserProgress", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			var attempts = new List<AttemptUdt>();
+			foreach (var word in deserialized.Words)
 			{
+				foreach (var attempt in word.Attempts)
+				{
+					var attemptUdt = new AttemptUdt()
+					{
+						WordId = attempt.WordId,
+						TaskType = attempt.TaskType,
+						CountOfAttempts = attempt.CountOfAttempts
+					};
+					attempts.Add(attemptUdt);
+				}
 			}
-			DatabaseHelper.CloseConnection(conn);
+			var tvp = new TableValuedParameter("attempts", "UDT_Attempt");
+			tvp.AddGeneticList(attempts);
+			var param = new DynamicTvpParameters();
+			param.Add("userId", deserialized.UserId);
+			param.Add(tvp);
+			var result = connection.Execute("WordRepository_AddOrUpdateUserWordProgress", param, commandType: CommandType.StoredProcedure);
+			//command.ExecuteNonQuery();
+			DatabaseHelper.CloseConnection(connection);
 		}
 
-		private DynamicParameters GetParam()//это тоже параметризировать!!!
+		private DynamicParameters GetParam(string userId, string level, int sublevel)//это тоже параметризировать!!!
 		{
 			var param = new DynamicParameters();
-			param.Add("@userId", "localhost");
-			param.Add("@level", "essential");
-			param.Add("@sublevel", 2);
+			param.Add("@userId", userId);
+			param.Add("@level", level);
+			param.Add("@sublevel", sublevel);
 
 			return param;
 		}

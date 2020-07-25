@@ -167,7 +167,7 @@ class Word extends Component {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({words: this.state.words})
+            body: JSON.stringify({words: this.state.words, userId: localStorage.getItem('userId')})
         });
     }
 }
