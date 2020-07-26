@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Security.Permissions;
 using Dapper;
 using GrePreparation.Extensions;
 using GrePreparation.Helpers;
@@ -11,7 +10,6 @@ using GrePreparation.Models;
 using GrePreparation.Models.QueryPost;
 using GrePreparation.Models.UDT;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.SqlServer.Server;
 using Newtonsoft.Json;
 
 
@@ -25,14 +23,7 @@ namespace GrePreparation.Controllers
 			var words = new List<Word>();
 			
 			var connection = DatabaseHelper.OpenConnection();
-			var command = new SqlCommand("WordRepository_GetWordsByLevel", connection);
-			command.CommandType = CommandType.StoredProcedure;
-			var userId = new SqlParameter{ ParameterName = "userId", Value = query.UserId};
-			var section = new SqlParameter{ ParameterName = "level", Value = query.Level};
-			var level = new SqlParameter{ ParameterName = "sublevel", Value = int.Parse(query.Sublevel)};
-			command.Parameters.Add(userId);
-			command.Parameters.Add(section);
-			command.Parameters.Add(level);
+			var command = GetCommandForWordsSp(connection, query);
 			using (var reader = command.ExecuteReader())
 			{
 				while (reader.Read())
@@ -59,7 +50,7 @@ namespace GrePreparation.Controllers
 		public JsonResult GetWordsForUserByUserLevel([FromBody]WordQuery query)
 		{
 			var connection = DatabaseHelper.OpenConnection();
-			var param = GetParam(query.UserId, query.Level, int.Parse(query.Sublevel));
+			var param = GetParamForGettingWordsForUserByLevel(query.UserId, query.Level, int.Parse(query.Sublevel));
 			var data = connection.QueryMultiple("WordRepository_GetWordsForUserByLevel", param, commandType: CommandType.StoredProcedure);
 			var wordsUdts = data.Read<WordUdt>().ToList();
 			var attemptsUdts = data.Read<AttemptUdt>().ToList();
@@ -77,10 +68,41 @@ namespace GrePreparation.Controllers
 			var connection = DatabaseHelper.OpenConnection();
 			var json = wordsQuery.ToString();
 			WordsQuery deserialized = JsonConvert.DeserializeObject<WordsQuery>(json);
-			var command = new SqlCommand("WordRepository_AddOrUpdateUserProgress", connection);
-			command.CommandType = CommandType.StoredProcedure;
+			var attempts = GetListAttemptUdts(deserialized.Words);
+			var dataTable = GetDataTable(attempts);
+			var command = GetCommandForAddOrUpdateUserWordProgress(connection, dataTable, deserialized.UserId);
+			command.ExecuteNonQuery();
+			DatabaseHelper.CloseConnection(connection);
+		}
+
+		private DynamicParameters GetParamForGettingWordsForUserByLevel(string userId, string level, int sublevel)//это тоже параметризировать!!!
+		{
+			var param = new DynamicParameters();
+			param.Add("@userId", userId);
+			param.Add("@level", level);
+			param.Add("@sublevel", sublevel);
+
+			return param;
+		}
+
+		private DataTable GetDataTable(List<AttemptUdt> attempts)
+		{
+			var dataTable = new DataTable();
+			dataTable.Columns.Add("WordId");
+			dataTable.Columns.Add("TaskType");
+			dataTable.Columns.Add("CountOfAttempts");
+			foreach (var attempt in attempts)
+			{
+				dataTable.Rows.Add(attempt.WordId, attempt.TaskType, attempt.CountOfAttempts);
+			}
+
+			return dataTable;
+		}
+
+		private List<AttemptUdt> GetListAttemptUdts(List<Word> words)
+		{
 			var attempts = new List<AttemptUdt>();
-			foreach (var word in deserialized.Words)
+			foreach (var word in words)
 			{
 				foreach (var attempt in word.Attempts)
 				{
@@ -93,26 +115,9 @@ namespace GrePreparation.Controllers
 					attempts.Add(attemptUdt);
 				}
 			}
-			var tvp = new TableValuedParameter("attempts", "UDT_Attempt");
-			tvp.AddGeneticList(attempts);
-			var param = new DynamicTvpParameters();
-			param.Add("userId", deserialized.UserId);
-			param.Add(tvp);
-			var result = connection.Execute("WordRepository_AddOrUpdateUserWordProgress", param, commandType: CommandType.StoredProcedure);
-			//command.ExecuteNonQuery();
-			DatabaseHelper.CloseConnection(connection);
+
+			return attempts;
 		}
-
-		private DynamicParameters GetParam(string userId, string level, int sublevel)//это тоже параметризировать!!!
-		{
-			var param = new DynamicParameters();
-			param.Add("@userId", userId);
-			param.Add("@level", level);
-			param.Add("@sublevel", sublevel);
-
-			return param;
-		}
-
 		private List<Word> GetListWords(List<WordUdt> wordUdts, List<AttemptUdt> attemptUdts)//ТУТ ТОЧНО ВСЁ ПЕРЕДЕЛАТЬ К МАППЕРУ
 		{
 			var words = new List<Word>();
@@ -149,6 +154,31 @@ namespace GrePreparation.Controllers
 			}
 
 			return words;
+		}
+
+		private SqlCommand GetCommandForAddOrUpdateUserWordProgress(SqlConnection connection, DataTable dataTable, string id)
+		{
+			var command = new SqlCommand("WordRepository_AddOrUpdateUserWordProgress", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			var userId = new SqlParameter{ ParameterName = "userId", Value = id };
+			command.Parameters.Add(userId);
+			command.Parameters.AddWithValue("@attempts", dataTable);
+			command.Parameters["@attempts"].TypeName = "UDT_Attempt";
+			return command;
+		}
+
+		private SqlCommand GetCommandForWordsSp(SqlConnection connection, WordQuery query)
+		{
+			var command = new SqlCommand("WordRepository_GetWordsByLevel", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			var userId = new SqlParameter{ ParameterName = "userId", Value = query.UserId};
+			var section = new SqlParameter{ ParameterName = "level", Value = query.Level};
+			var level = new SqlParameter{ ParameterName = "sublevel", Value = int.Parse(query.Sublevel)};
+
+			command.Parameters.Add(userId);
+			command.Parameters.Add(section);
+			command.Parameters.Add(level);
+			return command;
 		}
 	}
 }
